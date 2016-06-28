@@ -15,6 +15,9 @@
 		109515B31D2212EF00BE33BE /* HelpMeMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515B21D2212EF00BE33BE /* HelpMeMatchUITests.swift */; };
 		109515C11D22130800BE33BE /* CellDescriptor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 109515C01D22130800BE33BE /* CellDescriptor.plist */; };
 		109515C31D22143C00BE33BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109515C21D22143C00BE33BE /* LaunchScreen.storyboard */; };
+		109515C51D22165A00BE33BE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515C41D22165A00BE33BE /* MenuViewController.swift */; };
+		109515C81D221EBA00BE33BE /* NormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109515C71D221EBA00BE33BE /* NormalCell.xib */; };
+		109515CA1D221F4200BE33BE /* ValuePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109515C91D221F4200BE33BE /* ValuePickerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		109515B41D2212EF00BE33BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		109515C01D22130800BE33BE /* CellDescriptor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CellDescriptor.plist; path = ../../../CellDescriptor.plist; sourceTree = "<group>"; };
 		109515C21D22143C00BE33BE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
+		109515C41D22165A00BE33BE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		109515C71D221EBA00BE33BE /* NormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalCell.xib; sourceTree = "<group>"; };
+		109515C91D221F4200BE33BE /* ValuePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValuePickerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +105,9 @@
 		109515911D2212EF00BE33BE /* HelpMeMatch */ = {
 			isa = PBXGroup;
 			children = (
+				109515C61D221E6900BE33BE /* Expandable Menu */,
 				109515921D2212EF00BE33BE /* AppDelegate.swift */,
+				109515C41D22165A00BE33BE /* MenuViewController.swift */,
 				109515941D2212EF00BE33BE /* ViewController.swift */,
 				109515961D2212EF00BE33BE /* Main.storyboard */,
 				109515C21D22143C00BE33BE /* LaunchScreen.storyboard */,
@@ -126,6 +134,15 @@
 				109515B41D2212EF00BE33BE /* Info.plist */,
 			);
 			path = HelpMeMatchUITests;
+			sourceTree = "<group>";
+		};
+		109515C61D221E6900BE33BE /* Expandable Menu */ = {
+			isa = PBXGroup;
+			children = (
+				109515C71D221EBA00BE33BE /* NormalCell.xib */,
+				109515C91D221F4200BE33BE /* ValuePickerCell.xib */,
+			);
+			name = "Expandable Menu";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +252,9 @@
 				109515C11D22130800BE33BE /* CellDescriptor.plist in Resources */,
 				1095159A1D2212EF00BE33BE /* Assets.xcassets in Resources */,
 				109515C31D22143C00BE33BE /* LaunchScreen.storyboard in Resources */,
+				109515CA1D221F4200BE33BE /* ValuePickerCell.xib in Resources */,
 				109515981D2212EF00BE33BE /* Main.storyboard in Resources */,
+				109515C81D221EBA00BE33BE /* NormalCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				109515951D2212EF00BE33BE /* ViewController.swift in Sources */,
+				109515C51D22165A00BE33BE /* MenuViewController.swift in Sources */,
 				109515931D2212EF00BE33BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +500,7 @@
 				109515B91D2212EF00BE33BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		109515BA1D2212EF00BE33BE /* Build configuration list for PBXNativeTarget "HelpMeMatchTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +509,7 @@
 				109515BC1D2212EF00BE33BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		109515BD1D2212EF00BE33BE /* Build configuration list for PBXNativeTarget "HelpMeMatchUITests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +518,7 @@
 				109515BF1D2212EF00BE33BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
