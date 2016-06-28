@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1095158E1D2212EF00BE33BE"
+               BuildableName = "HelpMeMatch.app"
+               BlueprintName = "HelpMeMatch"
+               ReferencedContainer = "container:HelpMeMatch.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "109515A21D2212EF00BE33BE"
+               BuildableName = "HelpMeMatchTests.xctest"
+               BlueprintName = "HelpMeMatchTests"
+               ReferencedContainer = "container:HelpMeMatch.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "109515AD1D2212EF00BE33BE"
+               BuildableName = "HelpMeMatchUITests.xctest"
+               BlueprintName = "HelpMeMatchUITests"
+               ReferencedContainer = "container:HelpMeMatch.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1095158E1D2212EF00BE33BE"
+            BuildableName = "HelpMeMatch.app"
+            BlueprintName = "HelpMeMatch"
+            ReferencedContainer = "container:HelpMeMatch.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1095158E1D2212EF00BE33BE"
+            BuildableName = "HelpMeMatch.app"
+            BlueprintName = "HelpMeMatch"
+            ReferencedContainer = "container:HelpMeMatch.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1095158E1D2212EF00BE33BE"
+            BuildableName = "HelpMeMatch.app"
+            BlueprintName = "HelpMeMatch"
+            ReferencedContainer = "container:HelpMeMatch.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
