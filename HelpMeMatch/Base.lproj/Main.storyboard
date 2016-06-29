@@ -6,62 +6,123 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Color Picker View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HelpMeMatch" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ColorPickerViewController" customModule="HelpMeMatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b3w-bK-oea"/>
+                        <viewControllerLayoutGuide type="bottom" id="q9O-GD-Qea"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ywR-Da-a76">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WS6-TP-2ae">
+                                <rect key="frame" x="125" y="265" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="QOa-kO-2ed"/>
+                                    <constraint firstAttribute="height" constant="30" id="t8P-F3-3HN"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current selection:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk8-kC-Gcx">
+                                <rect key="frame" x="4" y="270" width="111" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2A-y1-etl">
+                                <rect key="frame" x="165" y="270" width="62" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgF-Lc-UIU">
+                                <rect key="frame" x="237" y="269.5" width="39" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zX-Yr-Hbb" customClass="HSBColorPicker" customModule="HelpMeMatch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="260"/>
+                                <color key="backgroundColor" red="0.81023637820000005" green="0.81023637820000005" blue="0.81023637820000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B2A-y1-etl" firstAttribute="centerY" secondItem="WS6-TP-2ae" secondAttribute="centerY" id="4Qj-4E-5oM"/>
+                            <constraint firstItem="WgF-Lc-UIU" firstAttribute="leading" secondItem="B2A-y1-etl" secondAttribute="trailing" constant="10" id="6zy-I2-F0K"/>
+                            <constraint firstItem="WgF-Lc-UIU" firstAttribute="baseline" secondItem="B2A-y1-etl" secondAttribute="baseline" id="9UF-RP-ZOX"/>
+                            <constraint firstItem="B2A-y1-etl" firstAttribute="leading" secondItem="WS6-TP-2ae" secondAttribute="trailing" constant="10" id="H8c-ez-FaM"/>
+                            <constraint firstItem="WgF-Lc-UIU" firstAttribute="centerY" secondItem="B2A-y1-etl" secondAttribute="centerY" id="Iiv-Ah-NiB"/>
+                            <constraint firstItem="Dk8-kC-Gcx" firstAttribute="centerY" secondItem="WS6-TP-2ae" secondAttribute="centerY" id="OL5-1k-zvT"/>
+                            <constraint firstItem="0zX-Yr-Hbb" firstAttribute="top" secondItem="ywR-Da-a76" secondAttribute="top" id="Pwm-oC-5sC"/>
+                            <constraint firstItem="WS6-TP-2ae" firstAttribute="top" secondItem="0zX-Yr-Hbb" secondAttribute="bottom" constant="5" id="Us5-sU-eca"/>
+                            <constraint firstItem="WS6-TP-2ae" firstAttribute="leading" secondItem="Dk8-kC-Gcx" secondAttribute="trailing" constant="10" id="ZAb-NH-bz5"/>
+                            <constraint firstItem="0zX-Yr-Hbb" firstAttribute="leading" secondItem="ywR-Da-a76" secondAttribute="leading" id="ekF-rw-8MT"/>
+                            <constraint firstItem="WS6-TP-2ae" firstAttribute="leading" secondItem="ywR-Da-a76" secondAttribute="leading" constant="125" id="gx9-Yn-evw"/>
+                            <constraint firstAttribute="trailing" secondItem="WS6-TP-2ae" secondAttribute="trailing" constant="5" id="i3L-Hq-jS0"/>
+                            <constraint firstAttribute="bottom" secondItem="WS6-TP-2ae" secondAttribute="bottom" constant="5" id="mmS-s0-SH9"/>
+                            <constraint firstAttribute="trailing" secondItem="0zX-Yr-Hbb" secondAttribute="trailing" id="qwj-ew-EQ3"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="i3L-Hq-jS0"/>
+                                <exclude reference="9UF-RP-ZOX"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                    <connections>
+                        <outlet property="colorPicker" destination="0zX-Yr-Hbb" id="R6w-SH-M2D"/>
+                        <outlet property="currentColor" destination="WS6-TP-2ae" id="k65-be-gLI"/>
+                    </connections>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="39" y="-72"/>
+            <point key="canvasLocation" x="566" y="-301"/>
         </scene>
-        <!--Color Picker View Controller-->
+        <!--View Controller-->
         <scene sceneID="Tvv-RE-xTB">
             <objects>
-                <viewController id="v1Q-kF-MI1" customClass="ColorPickerViewController" customModule="HelpMeMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="v1Q-kF-MI1" customClass="ViewController" customModule="HelpMeMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H9X-I1-gmg"/>
                         <viewControllerLayoutGuide type="bottom" id="e57-pT-U6e"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mFE-KU-3i9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ouu-5m-ZlB" customClass="HSBColorPicker" customModule="HelpMeMatch" customModuleProvider="target">
-                                <rect key="frame" x="47" y="42" width="496" height="274"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DEk-Io-4dE">
-                                <rect key="frame" x="47" y="388" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7CR-xE-u3x">
+                                <rect key="frame" x="20" y="20" width="46" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4B-8e-MTw">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="showPopover:" destination="v1Q-kF-MI1" eventType="touchUpInside" id="lde-gd-AbF"/>
+                                            <segue destination="BYZ-38-t0r" kind="popoverPresentation" identifier="showView" popoverAnchorView="T4B-8e-MTw" id="Kus-sB-wwF">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ouu-5m-ZlB" secondAttribute="trailing" constant="37" id="JCh-XE-3AB"/>
-                            <constraint firstItem="Ouu-5m-ZlB" firstAttribute="leading" secondItem="mFE-KU-3i9" secondAttribute="leadingMargin" constant="27" id="X9R-gC-UiH"/>
-                            <constraint firstItem="e57-pT-U6e" firstAttribute="top" secondItem="Ouu-5m-ZlB" secondAttribute="bottom" constant="284" id="gdD-vj-Tv7"/>
-                            <constraint firstItem="Ouu-5m-ZlB" firstAttribute="top" secondItem="H9X-I1-gmg" secondAttribute="bottom" constant="22" id="kfx-jO-nSW"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="myView" destination="Ouu-5m-ZlB" id="cyY-Xo-fRB"/>
-                        <outlet property="viewP" destination="DEk-Io-4dE" id="GOE-gK-XjX"/>
-                    </connections>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggv-K2-ZKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="585" y="-127"/>
+            <point key="canvasLocation" x="57" y="-301"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="fln-nb-IEF">

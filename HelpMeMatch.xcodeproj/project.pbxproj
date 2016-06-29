@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		107D8B771D2410D800DD449E /* HSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D8B761D2410D800DD449E /* HSBColorPicker.swift */; };
+		107D8B791D242E2400DD449E /* ColorPickerPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107D8B781D242E2400DD449E /* ColorPickerPopView.xib */; };
 		109515931D2212EF00BE33BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515921D2212EF00BE33BE /* AppDelegate.swift */; };
 		109515951D2212EF00BE33BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515941D2212EF00BE33BE /* ViewController.swift */; };
 		109515981D2212EF00BE33BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109515961D2212EF00BE33BE /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		107D8B761D2410D800DD449E /* HSBColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColorPicker.swift; sourceTree = "<group>"; };
+		107D8B781D242E2400DD449E /* ColorPickerPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerPopView.xib; sourceTree = "<group>"; };
 		1095158F1D2212EF00BE33BE /* HelpMeMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpMeMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		109515921D2212EF00BE33BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		109515941D2212EF00BE33BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				107D8B761D2410D800DD449E /* HSBColorPicker.swift */,
 				109515C71D221EBA00BE33BE /* NormalCell.xib */,
 				109515C91D221F4200BE33BE /* ValuePickerCell.xib */,
+				107D8B781D242E2400DD449E /* ColorPickerPopView.xib */,
 			);
 			name = "Expandable Menu";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				1095159A1D2212EF00BE33BE /* Assets.xcassets in Resources */,
 				109515C31D22143C00BE33BE /* LaunchScreen.storyboard in Resources */,
 				109515CA1D221F4200BE33BE /* ValuePickerCell.xib in Resources */,
+				107D8B791D242E2400DD449E /* ColorPickerPopView.xib in Resources */,
 				109515981D2212EF00BE33BE /* Main.storyboard in Resources */,
 				109515C81D221EBA00BE33BE /* NormalCell.xib in Resources */,
 			);

@@ -15,10 +15,9 @@ class ColorPickerViewController: UIViewController, HSBColorPickerDelegate {
     let formatString = "HSB: %4.2f,%4.2f,%4.2f RGB: %4.2f,%4.2f,%4.2f"
     
     // MARK: - IBOutlet Properties
-
-    @IBOutlet weak var pickerView: HSBColorPicker!
-    @IBOutlet weak var currentColor: UIView!
     
+    @IBOutlet weak var currentColor: UIView!    
+    @IBOutlet weak var colorPicker: HSBColorPicker!
     
     // MARK: - HSBColorPickerDelegate Functions
     
@@ -26,13 +25,12 @@ class ColorPickerViewController: UIViewController, HSBColorPickerDelegate {
         currentColor.backgroundColor = color
     }
     
-        
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // set the picker object's delegate to this controller
-        pickerView.delegate = self
+        
+        colorPicker.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
