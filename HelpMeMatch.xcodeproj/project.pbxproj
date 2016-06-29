@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107D8B771D2410D800DD449E /* HSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D8B761D2410D800DD449E /* HSBColorPicker.swift */; };
 		109515931D2212EF00BE33BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515921D2212EF00BE33BE /* AppDelegate.swift */; };
 		109515951D2212EF00BE33BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515941D2212EF00BE33BE /* ViewController.swift */; };
 		109515981D2212EF00BE33BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109515961D2212EF00BE33BE /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 		109515C51D22165A00BE33BE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515C41D22165A00BE33BE /* MenuViewController.swift */; };
 		109515C81D221EBA00BE33BE /* NormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109515C71D221EBA00BE33BE /* NormalCell.xib */; };
 		109515CA1D221F4200BE33BE /* ValuePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109515C91D221F4200BE33BE /* ValuePickerCell.xib */; };
+		109515CC1D23533400BE33BE /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515CB1D23533400BE33BE /* ColorPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		107D8B761D2410D800DD449E /* HSBColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColorPicker.swift; sourceTree = "<group>"; };
 		1095158F1D2212EF00BE33BE /* HelpMeMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpMeMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		109515921D2212EF00BE33BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		109515941D2212EF00BE33BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		109515C41D22165A00BE33BE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		109515C71D221EBA00BE33BE /* NormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalCell.xib; sourceTree = "<group>"; };
 		109515C91D221F4200BE33BE /* ValuePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValuePickerCell.xib; sourceTree = "<group>"; };
+		109515CB1D23533400BE33BE /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,15 +109,14 @@
 		109515911D2212EF00BE33BE /* HelpMeMatch */ = {
 			isa = PBXGroup;
 			children = (
-				109515C61D221E6900BE33BE /* Expandable Menu */,
 				109515921D2212EF00BE33BE /* AppDelegate.swift */,
-				109515C41D22165A00BE33BE /* MenuViewController.swift */,
 				109515941D2212EF00BE33BE /* ViewController.swift */,
 				109515961D2212EF00BE33BE /* Main.storyboard */,
-				109515C21D22143C00BE33BE /* LaunchScreen.storyboard */,
+				109515C61D221E6900BE33BE /* Expandable Menu */,
 				109515C01D22130800BE33BE /* CellDescriptor.plist */,
 				1095159E1D2212EF00BE33BE /* Info.plist */,
 				109515991D2212EF00BE33BE /* Assets.xcassets */,
+				109515C21D22143C00BE33BE /* LaunchScreen.storyboard */,
 			);
 			path = HelpMeMatch;
 			sourceTree = "<group>";
@@ -139,6 +142,9 @@
 		109515C61D221E6900BE33BE /* Expandable Menu */ = {
 			isa = PBXGroup;
 			children = (
+				109515C41D22165A00BE33BE /* MenuViewController.swift */,
+				109515CB1D23533400BE33BE /* ColorPickerViewController.swift */,
+				107D8B761D2410D800DD449E /* HSBColorPicker.swift */,
 				109515C71D221EBA00BE33BE /* NormalCell.xib */,
 				109515C91D221F4200BE33BE /* ValuePickerCell.xib */,
 			);
@@ -280,7 +286,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				109515951D2212EF00BE33BE /* ViewController.swift in Sources */,
+				107D8B771D2410D800DD449E /* HSBColorPicker.swift in Sources */,
 				109515C51D22165A00BE33BE /* MenuViewController.swift in Sources */,
+				109515CC1D23533400BE33BE /* ColorPickerViewController.swift in Sources */,
 				109515931D2212EF00BE33BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

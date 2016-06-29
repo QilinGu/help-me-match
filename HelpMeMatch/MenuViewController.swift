@@ -10,40 +10,18 @@ import UIKit
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-     // MARK: IBOutlet Properties
+     // MARK: - IBOutlet Properties
     
     @IBOutlet weak var expandingTable: UITableView!
     
     
-    // MARK: Stored Properties
+    // MARK: - Stored Properties
     
     var cellDescriptors: NSMutableArray!
     var visibleRowsPerSection = [[Int]]()
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        configureTableView()
-        
-        loadCellDescriptors()
-        print(cellDescriptors)
-    }
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    
-    // MARK: Custom Functions
+    // MARK: - Custom Functions
     
     func configureTableView() {
         expandingTable.delegate = self
@@ -91,7 +69,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    // MARK: UITableView Delegate and Datasource Functions
+    // MARK: - UITableView Delegate and Datasource Functions
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if cellDescriptors != nil {
@@ -181,6 +159,30 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         getIndicesOfVisibleRows()
         expandingTable.reloadSections(NSIndexSet(index: indexPath.section), withRowAnimation: .Fade)
         }
+    }
+    
+    
+    // MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        configureTableView()
+        
+        loadCellDescriptors()
+        print(cellDescriptors)
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
 }
