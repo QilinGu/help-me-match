@@ -17,8 +17,8 @@ internal protocol HSBColorPickerDelegate : NSObjectProtocol {
 class HSBColorPicker : UIView {
     
     weak internal var delegate: HSBColorPickerDelegate?
-    let saturationExponentTop: Float = 2.0
-    let saturationExponentBottom: Float = 1.3
+    let saturationExponentTop: Float = 1.0
+    let saturationExponentBottom: Float = 0
     
     @IBInspectable var elementSize: CGFloat = 1.0 {
         didSet {
@@ -95,10 +95,24 @@ class HSBColorPicker : UIView {
         return CGPoint(x: xPos, y: yPos)
     }
     
-    func touchedColor(gestureRecognizer: UILongPressGestureRecognizer){
+    func touchedColor(gestureRecognizer: UILongPressGestureRecognizer) {
         let point = gestureRecognizer.locationInView(self)
         let color = getColorAtPoint(point)
         
+        
         self.delegate?.HSBColorColorPickerTouched(self, color: color, point: point, state:gestureRecognizer.state)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100700171D3ACBD800F1440B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100700161D3ACBD800F1440B /* Color.swift */; };
 		107D8B771D2410D800DD449E /* HSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D8B761D2410D800DD449E /* HSBColorPicker.swift */; };
 		107D8B791D242E2400DD449E /* ColorPickerPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107D8B781D242E2400DD449E /* ColorPickerPopView.xib */; };
+		107D8B7D1D2475C900DD449E /* ValuePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D8B7C1D2475C900DD449E /* ValuePickerViewController.swift */; };
 		109515931D2212EF00BE33BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515921D2212EF00BE33BE /* AppDelegate.swift */; };
-		109515951D2212EF00BE33BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515941D2212EF00BE33BE /* ViewController.swift */; };
+		109515951D2212EF00BE33BE /* ColorButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515941D2212EF00BE33BE /* ColorButtonViewController.swift */; };
 		109515981D2212EF00BE33BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109515961D2212EF00BE33BE /* Main.storyboard */; };
 		1095159A1D2212EF00BE33BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 109515991D2212EF00BE33BE /* Assets.xcassets */; };
 		109515A81D2212EF00BE33BE /* HelpMeMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515A71D2212EF00BE33BE /* HelpMeMatchTests.swift */; };
@@ -41,11 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100700161D3ACBD800F1440B /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		107D8B761D2410D800DD449E /* HSBColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColorPicker.swift; sourceTree = "<group>"; };
 		107D8B781D242E2400DD449E /* ColorPickerPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerPopView.xib; sourceTree = "<group>"; };
+		107D8B7C1D2475C900DD449E /* ValuePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValuePickerViewController.swift; sourceTree = "<group>"; };
 		1095158F1D2212EF00BE33BE /* HelpMeMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpMeMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		109515921D2212EF00BE33BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		109515941D2212EF00BE33BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		109515941D2212EF00BE33BE /* ColorButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButtonViewController.swift; sourceTree = "<group>"; };
 		109515971D2212EF00BE33BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		109515991D2212EF00BE33BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1095159E1D2212EF00BE33BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +92,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		107D8B7A1D2473D900DD449E /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				109515941D2212EF00BE33BE /* ColorButtonViewController.swift */,
+				109515CB1D23533400BE33BE /* ColorPickerViewController.swift */,
+				107D8B761D2410D800DD449E /* HSBColorPicker.swift */,
+				100700161D3ACBD800F1440B /* Color.swift */,
+				107D8B781D242E2400DD449E /* ColorPickerPopView.xib */,
+			);
+			name = ColorPicker;
+			sourceTree = "<group>";
+		};
+		107D8B7B1D24756000DD449E /* ValuePicker */ = {
+			isa = PBXGroup;
+			children = (
+				107D8B7C1D2475C900DD449E /* ValuePickerViewController.swift */,
+			);
+			name = ValuePicker;
+			sourceTree = "<group>";
+		};
 		109515861D2212EF00BE33BE = {
 			isa = PBXGroup;
 			children = (
@@ -111,9 +135,10 @@
 		109515911D2212EF00BE33BE /* HelpMeMatch */ = {
 			isa = PBXGroup;
 			children = (
-				109515921D2212EF00BE33BE /* AppDelegate.swift */,
-				109515941D2212EF00BE33BE /* ViewController.swift */,
 				109515961D2212EF00BE33BE /* Main.storyboard */,
+				109515921D2212EF00BE33BE /* AppDelegate.swift */,
+				107D8B7B1D24756000DD449E /* ValuePicker */,
+				107D8B7A1D2473D900DD449E /* ColorPicker */,
 				109515C61D221E6900BE33BE /* Expandable Menu */,
 				109515C01D22130800BE33BE /* CellDescriptor.plist */,
 				1095159E1D2212EF00BE33BE /* Info.plist */,
@@ -145,11 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				109515C41D22165A00BE33BE /* MenuViewController.swift */,
-				109515CB1D23533400BE33BE /* ColorPickerViewController.swift */,
-				107D8B761D2410D800DD449E /* HSBColorPicker.swift */,
 				109515C71D221EBA00BE33BE /* NormalCell.xib */,
 				109515C91D221F4200BE33BE /* ValuePickerCell.xib */,
-				107D8B781D242E2400DD449E /* ColorPickerPopView.xib */,
 			);
 			name = "Expandable Menu";
 			sourceTree = "<group>";
@@ -289,8 +311,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				109515951D2212EF00BE33BE /* ViewController.swift in Sources */,
+				109515951D2212EF00BE33BE /* ColorButtonViewController.swift in Sources */,
+				100700171D3ACBD800F1440B /* Color.swift in Sources */,
 				107D8B771D2410D800DD449E /* HSBColorPicker.swift in Sources */,
+				107D8B7D1D2475C900DD449E /* ValuePickerViewController.swift in Sources */,
 				109515C51D22165A00BE33BE /* MenuViewController.swift in Sources */,
 				109515CC1D23533400BE33BE /* ColorPickerViewController.swift in Sources */,
 				109515931D2212EF00BE33BE /* AppDelegate.swift in Sources */,

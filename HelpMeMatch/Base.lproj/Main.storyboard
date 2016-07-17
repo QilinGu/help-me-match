@@ -9,7 +9,6 @@
         <!--Color Picker View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ColorPickerViewController" customModule="HelpMeMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b3w-bK-oea"/>
@@ -19,35 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WS6-TP-2ae">
-                                <rect key="frame" x="125" y="265" width="30" height="30"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="QOa-kO-2ed"/>
-                                    <constraint firstAttribute="height" constant="30" id="t8P-F3-3HN"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current selection:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk8-kC-Gcx">
-                                <rect key="frame" x="4" y="270" width="111" height="20"/>
+                                <rect key="frame" x="9" y="275" width="111" height="20"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2A-y1-etl">
-                                <rect key="frame" x="165" y="270" width="62" height="20"/>
+                                <rect key="frame" x="155" y="275" width="62" height="20"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgF-Lc-UIU">
-                                <rect key="frame" x="237" y="269.5" width="39" height="20"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="227" y="279.5" width="28" height="14"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zX-Yr-Hbb" customClass="HSBColorPicker" customModule="HelpMeMatch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="260"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="270"/>
                                 <color key="backgroundColor" red="0.81023637820000005" green="0.81023637820000005" blue="0.81023637820000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WS6-TP-2ae">
+                                <rect key="frame" x="125" y="275" width="20" height="20"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="QOa-kO-2ed"/>
+                                    <constraint firstAttribute="height" constant="20" id="t8P-F3-3HN"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -55,12 +54,13 @@
                             <constraint firstItem="B2A-y1-etl" firstAttribute="centerY" secondItem="WS6-TP-2ae" secondAttribute="centerY" id="4Qj-4E-5oM"/>
                             <constraint firstItem="WgF-Lc-UIU" firstAttribute="leading" secondItem="B2A-y1-etl" secondAttribute="trailing" constant="10" id="6zy-I2-F0K"/>
                             <constraint firstItem="WgF-Lc-UIU" firstAttribute="baseline" secondItem="B2A-y1-etl" secondAttribute="baseline" id="9UF-RP-ZOX"/>
+                            <constraint firstItem="WgF-Lc-UIU" firstAttribute="baseline" secondItem="B2A-y1-etl" secondAttribute="baseline" id="Bwz-zL-x6w"/>
                             <constraint firstItem="B2A-y1-etl" firstAttribute="leading" secondItem="WS6-TP-2ae" secondAttribute="trailing" constant="10" id="H8c-ez-FaM"/>
                             <constraint firstItem="WgF-Lc-UIU" firstAttribute="centerY" secondItem="B2A-y1-etl" secondAttribute="centerY" id="Iiv-Ah-NiB"/>
                             <constraint firstItem="Dk8-kC-Gcx" firstAttribute="centerY" secondItem="WS6-TP-2ae" secondAttribute="centerY" id="OL5-1k-zvT"/>
                             <constraint firstItem="0zX-Yr-Hbb" firstAttribute="top" secondItem="ywR-Da-a76" secondAttribute="top" id="Pwm-oC-5sC"/>
                             <constraint firstItem="WS6-TP-2ae" firstAttribute="top" secondItem="0zX-Yr-Hbb" secondAttribute="bottom" constant="5" id="Us5-sU-eca"/>
-                            <constraint firstItem="WS6-TP-2ae" firstAttribute="leading" secondItem="Dk8-kC-Gcx" secondAttribute="trailing" constant="10" id="ZAb-NH-bz5"/>
+                            <constraint firstItem="WS6-TP-2ae" firstAttribute="leading" secondItem="Dk8-kC-Gcx" secondAttribute="trailing" constant="5" id="ZAb-NH-bz5"/>
                             <constraint firstItem="0zX-Yr-Hbb" firstAttribute="leading" secondItem="ywR-Da-a76" secondAttribute="leading" id="ekF-rw-8MT"/>
                             <constraint firstItem="WS6-TP-2ae" firstAttribute="leading" secondItem="ywR-Da-a76" secondAttribute="leading" constant="125" id="gx9-Yn-evw"/>
                             <constraint firstAttribute="trailing" secondItem="WS6-TP-2ae" secondAttribute="trailing" constant="5" id="i3L-Hq-jS0"/>
@@ -74,6 +74,7 @@
                             <mask key="constraints">
                                 <exclude reference="i3L-Hq-jS0"/>
                                 <exclude reference="9UF-RP-ZOX"/>
+                                <exclude reference="Iiv-Ah-NiB"/>
                             </mask>
                         </variation>
                     </view>
@@ -81,17 +82,19 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="300" height="300"/>
                     <connections>
+                        <outlet property="colorLabel" destination="WgF-Lc-UIU" id="hM8-aJ-whe"/>
                         <outlet property="colorPicker" destination="0zX-Yr-Hbb" id="R6w-SH-M2D"/>
                         <outlet property="currentColor" destination="WS6-TP-2ae" id="k65-be-gLI"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566" y="-301"/>
+            <point key="canvasLocation" x="-806" y="-1061"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Button View Controller-->
         <scene sceneID="Tvv-RE-xTB">
             <objects>
-                <viewController id="v1Q-kF-MI1" customClass="ViewController" customModule="HelpMeMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="v1Q-kF-MI1" customClass="ColorButtonViewController" customModule="HelpMeMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H9X-I1-gmg"/>
                         <viewControllerLayoutGuide type="bottom" id="e57-pT-U6e"/>
@@ -122,7 +125,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggv-K2-ZKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="-301"/>
+            <point key="canvasLocation" x="-1247" y="-1061"/>
+        </scene>
+        <!--Value Picker View Controller-->
+        <scene sceneID="wCg-ZY-Gdh">
+            <objects>
+                <viewController id="suD-7L-kCI" customClass="ValuePickerViewController" customModule="HelpMeMatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bnT-i3-gn8"/>
+                        <viewControllerLayoutGuide type="bottom" id="MSR-Yk-WeM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y5M-oC-YP7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ha-pW-xrh">
+                                <rect key="frame" x="184" y="686" width="46" height="30"/>
+                                <state key="normal" title="Select"/>
+                                <connections>
+                                    <action selector="selectValue:" destination="suD-7L-kCI" eventType="touchUpInside" id="4IP-OV-Zny"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Ha-pW-xrh" secondAttribute="trailing" constant="164" id="0ze-ZP-QGr"/>
+                            <constraint firstItem="MSR-Yk-WeM" firstAttribute="top" secondItem="2Ha-pW-xrh" secondAttribute="bottom" constant="20" id="5hM-53-lH9"/>
+                            <constraint firstItem="2Ha-pW-xrh" firstAttribute="leading" secondItem="Y5M-oC-YP7" secondAttribute="leadingMargin" constant="164" id="ycb-WS-O0Y"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jYv-ID-z20" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1247" y="-148"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="fln-nb-IEF">
@@ -156,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fej-Hy-uI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="269" y="801"/>
+            <point key="canvasLocation" x="-255" y="-1061"/>
         </scene>
     </scenes>
 </document>

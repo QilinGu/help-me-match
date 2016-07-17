@@ -12,17 +12,20 @@ class ColorPickerViewController: UIViewController, HSBColorPickerDelegate {
     
     //MARK: - Stored Properties
     
-    let formatString = "HSB: %4.2f,%4.2f,%4.2f RGB: %4.2f,%4.2f,%4.2f"
     
     // MARK: - IBOutlet Properties
     
     @IBOutlet weak var currentColor: UIView!    
     @IBOutlet weak var colorPicker: HSBColorPicker!
+    @IBOutlet weak var colorLabel: UILabel!
+    
     
     // MARK: - HSBColorPickerDelegate Functions
     
+    // Attached to the small selection, changes its color to the user selection
     func HSBColorColorPickerTouched(sender: HSBColorPicker, color: UIColor, point: CGPoint, state: UIGestureRecognizerState) {
         currentColor.backgroundColor = color
+        colorLabel.text = ColorHelper.getColorCategory(point.x, colorSelectorWidth: colorPicker.bounds.width)
     }
     
     //MARK: - Life Cycle
