@@ -20,25 +20,19 @@
                     <color key="backgroundColor" red="0.81023637820000005" green="0.81023637820000005" blue="0.81023637820000005" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current selection:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmW-a9-Olv">
-                    <rect key="frame" x="4" y="275" width="111" height="20"/>
-                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                    <rect key="frame" x="7" y="276" width="103" height="18"/>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIo-Zv-50A">
-                    <rect key="frame" x="155" y="275" width="62" height="20"/>
-                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibr-Wm-6Wf">
-                    <rect key="frame" x="227" y="278" width="28" height="14"/>
-                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                    <rect key="frame" x="145" y="276" width="58" height="18"/>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RdU-Jb-FfX">
-                    <rect key="frame" x="125" y="275" width="20" height="20"/>
+                    <rect key="frame" x="115" y="275" width="20" height="20"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="gjr-Ki-ab2"/>
@@ -53,22 +47,29 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibr-Wm-6Wf">
+                    <rect key="frame" x="208" y="276" width="36" height="18"/>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="5c1-Kj-nIq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="50W-7u-BLF"/>
+                <constraint firstItem="ibr-Wm-6Wf" firstAttribute="baseline" secondItem="qIo-Zv-50A" secondAttribute="baseline" id="5Xc-IJ-myH"/>
                 <constraint firstItem="OmW-a9-Olv" firstAttribute="centerY" secondItem="RdU-Jb-FfX" secondAttribute="centerY" id="8Vi-tI-ke3"/>
                 <constraint firstItem="ibr-Wm-6Wf" firstAttribute="baseline" secondItem="qIo-Zv-50A" secondAttribute="baseline" id="CNm-fT-trX"/>
                 <constraint firstItem="5c1-Kj-nIq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GfH-Nq-Xvn"/>
                 <constraint firstAttribute="trailing" secondItem="RdU-Jb-FfX" secondAttribute="trailing" constant="5" id="Paa-um-Zwb"/>
-                <constraint firstItem="RdU-Jb-FfX" firstAttribute="leading" secondItem="OmW-a9-Olv" secondAttribute="trailing" constant="10" id="UMM-V2-xiH"/>
+                <constraint firstItem="RdU-Jb-FfX" firstAttribute="leading" secondItem="OmW-a9-Olv" secondAttribute="trailing" constant="5" id="UMM-V2-xiH"/>
                 <constraint firstAttribute="bottom" secondItem="RdU-Jb-FfX" secondAttribute="bottom" constant="5" id="WYW-Za-3PW"/>
                 <constraint firstItem="qIo-Zv-50A" firstAttribute="leading" secondItem="RdU-Jb-FfX" secondAttribute="trailing" constant="10" id="gRd-R2-Y4A"/>
-                <constraint firstItem="RdU-Jb-FfX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="125" id="oIW-IB-10B"/>
+                <constraint firstItem="RdU-Jb-FfX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="115" id="oIW-IB-10B"/>
                 <constraint firstItem="RdU-Jb-FfX" firstAttribute="top" secondItem="5c1-Kj-nIq" secondAttribute="bottom" constant="5" id="r1M-sE-Q3F"/>
                 <constraint firstItem="ibr-Wm-6Wf" firstAttribute="centerY" secondItem="qIo-Zv-50A" secondAttribute="centerY" id="rbb-gz-XlU"/>
                 <constraint firstItem="qIo-Zv-50A" firstAttribute="centerY" secondItem="RdU-Jb-FfX" secondAttribute="centerY" id="u4I-KX-Ujg"/>
-                <constraint firstItem="ibr-Wm-6Wf" firstAttribute="leading" secondItem="qIo-Zv-50A" secondAttribute="trailing" constant="10" id="wgN-2j-rA1"/>
+                <constraint firstItem="ibr-Wm-6Wf" firstAttribute="leading" secondItem="qIo-Zv-50A" secondAttribute="trailing" constant="5" id="wgN-2j-rA1"/>
                 <constraint firstAttribute="trailing" secondItem="5c1-Kj-nIq" secondAttribute="trailing" id="zbO-9P-7dv"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -80,9 +81,10 @@
                 <mask key="constraints">
                     <exclude reference="Paa-um-Zwb"/>
                     <exclude reference="CNm-fT-trX"/>
+                    <exclude reference="rbb-gz-XlU"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="518" y="191"/>
+            <point key="canvasLocation" x="480" y="-71"/>
         </view>
     </objects>
 </document>
