@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		100700171D3ACBD800F1440B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100700161D3ACBD800F1440B /* Color.swift */; };
+		1007001B1D3BF70D00F1440B /* ScrollSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1007001A1D3BF70D00F1440B /* ScrollSelector.xib */; };
+		1007001D1D3D620600F1440B /* Clothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1007001C1D3D620600F1440B /* Clothing.swift */; };
+		10582AB51D3D71B6005612DE /* ClothingDescriptor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10582AB41D3D71B6005612DE /* ClothingDescriptor.plist */; };
 		107D8B771D2410D800DD449E /* HSBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D8B761D2410D800DD449E /* HSBColorPicker.swift */; };
 		107D8B791D242E2400DD449E /* ColorPickerPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107D8B781D242E2400DD449E /* ColorPickerPopView.xib */; };
 		107D8B7D1D2475C900DD449E /* ValuePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D8B7C1D2475C900DD449E /* ValuePickerViewController.swift */; };
@@ -44,6 +47,9 @@
 
 /* Begin PBXFileReference section */
 		100700161D3ACBD800F1440B /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		1007001A1D3BF70D00F1440B /* ScrollSelector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollSelector.xib; sourceTree = "<group>"; };
+		1007001C1D3D620600F1440B /* Clothing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clothing.swift; sourceTree = "<group>"; };
+		10582AB41D3D71B6005612DE /* ClothingDescriptor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ClothingDescriptor.plist; sourceTree = "<group>"; };
 		107D8B761D2410D800DD449E /* HSBColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColorPicker.swift; sourceTree = "<group>"; };
 		107D8B781D242E2400DD449E /* ColorPickerPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerPopView.xib; sourceTree = "<group>"; };
 		107D8B7C1D2475C900DD449E /* ValuePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValuePickerViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				107D8B7C1D2475C900DD449E /* ValuePickerViewController.swift */,
+				1007001C1D3D620600F1440B /* Clothing.swift */,
 			);
 			name = ValuePicker;
 			sourceTree = "<group>";
@@ -140,6 +147,7 @@
 				107D8B7B1D24756000DD449E /* ValuePicker */,
 				107D8B7A1D2473D900DD449E /* ColorPicker */,
 				109515C61D221E6900BE33BE /* Expandable Menu */,
+				10582AB41D3D71B6005612DE /* ClothingDescriptor.plist */,
 				109515C01D22130800BE33BE /* CellDescriptor.plist */,
 				1095159E1D2212EF00BE33BE /* Info.plist */,
 				109515991D2212EF00BE33BE /* Assets.xcassets */,
@@ -172,6 +180,7 @@
 				109515C41D22165A00BE33BE /* MenuViewController.swift */,
 				109515C71D221EBA00BE33BE /* NormalCell.xib */,
 				109515C91D221F4200BE33BE /* ValuePickerCell.xib */,
+				1007001A1D3BF70D00F1440B /* ScrollSelector.xib */,
 			);
 			name = "Expandable Menu";
 			sourceTree = "<group>";
@@ -283,8 +292,10 @@
 				109515C11D22130800BE33BE /* CellDescriptor.plist in Resources */,
 				1095159A1D2212EF00BE33BE /* Assets.xcassets in Resources */,
 				109515C31D22143C00BE33BE /* LaunchScreen.storyboard in Resources */,
+				1007001B1D3BF70D00F1440B /* ScrollSelector.xib in Resources */,
 				109515CA1D221F4200BE33BE /* ValuePickerCell.xib in Resources */,
 				107D8B791D242E2400DD449E /* ColorPickerPopView.xib in Resources */,
+				10582AB51D3D71B6005612DE /* ClothingDescriptor.plist in Resources */,
 				109515981D2212EF00BE33BE /* Main.storyboard in Resources */,
 				109515C81D221EBA00BE33BE /* NormalCell.xib in Resources */,
 			);
@@ -312,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				109515951D2212EF00BE33BE /* ColorButtonViewController.swift in Sources */,
+				1007001D1D3D620600F1440B /* Clothing.swift in Sources */,
 				100700171D3ACBD800F1440B /* Color.swift in Sources */,
 				107D8B771D2410D800DD449E /* HSBColorPicker.swift in Sources */,
 				107D8B7D1D2475C900DD449E /* ValuePickerViewController.swift in Sources */,

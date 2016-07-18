@@ -102,6 +102,9 @@ class ColorHelper {
         }
         
         for i in 0...19 {
+            // ColorPicker was split up weird 
+            // | 1/2 R | 1 G | 1 B | 1/2 R |
+            // so to compensate its shifted half a segment
             if ((CGFloat(i) * colorSegmentWidth) <= x && x < ((CGFloat(i + 1) * colorSegmentWidth) + (0.5 * colorSegmentWidth))) {
                 return (Category(rawValue: i + 1)?.getStringForCategory())!
             }

@@ -135,30 +135,47 @@
                         <viewControllerLayoutGuide type="top" id="bnT-i3-gn8"/>
                         <viewControllerLayoutGuide type="bottom" id="MSR-Yk-WeM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Y5M-oC-YP7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <view key="view" contentMode="scaleToFill" id="6XL-YN-jdM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ha-pW-xrh">
-                                <rect key="frame" x="184" y="686" width="46" height="30"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xkg-FU-7jJ">
+                                <rect key="frame" x="0.0" y="10" width="160" height="80"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eif-up-8tf">
+                                <rect key="frame" x="221" y="34" width="41" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <state key="normal" title="Select"/>
-                                <connections>
-                                    <action selector="selectValue:" destination="suD-7L-kCI" eventType="touchUpInside" id="4IP-OV-Zny"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="2Ha-pW-xrh" secondAttribute="trailing" constant="164" id="0ze-ZP-QGr"/>
-                            <constraint firstItem="MSR-Yk-WeM" firstAttribute="top" secondItem="2Ha-pW-xrh" secondAttribute="bottom" constant="20" id="5hM-53-lH9"/>
-                            <constraint firstItem="2Ha-pW-xrh" firstAttribute="leading" secondItem="Y5M-oC-YP7" secondAttribute="leadingMargin" constant="164" id="ycb-WS-O0Y"/>
+                            <constraint firstAttribute="trailing" secondItem="Xkg-FU-7jJ" secondAttribute="trailing" constant="160" id="Cjf-rE-oja"/>
+                            <constraint firstAttribute="bottom" secondItem="Xkg-FU-7jJ" secondAttribute="bottom" constant="10" id="Dyn-sJ-Ak8"/>
+                            <constraint firstItem="Xkg-FU-7jJ" firstAttribute="leading" secondItem="6XL-YN-jdM" secondAttribute="leading" constant="10" id="Gue-RC-rHv"/>
+                            <constraint firstItem="Xkg-FU-7jJ" firstAttribute="top" secondItem="6XL-YN-jdM" secondAttribute="top" constant="10" id="Mbh-UE-vvB"/>
+                            <constraint firstItem="eif-up-8tf" firstAttribute="top" secondItem="6XL-YN-jdM" secondAttribute="top" constant="34" id="lw6-GU-Mew"/>
+                            <constraint firstItem="Xkg-FU-7jJ" firstAttribute="leading" secondItem="6XL-YN-jdM" secondAttribute="leading" id="tv2-mP-x3F"/>
+                            <constraint firstAttribute="trailing" secondItem="eif-up-8tf" secondAttribute="trailing" constant="58" id="zm4-d8-X9g"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Gue-RC-rHv"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="100"/>
+                    <connections>
+                        <outlet property="pickerView" destination="Xkg-FU-7jJ" id="c4H-eD-viU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jYv-ID-z20" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1247" y="-148"/>
+            <point key="canvasLocation" x="-1288" y="-178"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="fln-nb-IEF">
