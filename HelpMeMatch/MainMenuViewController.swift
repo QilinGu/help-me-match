@@ -22,14 +22,29 @@ class MainMenuViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //MARK: - Navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier != nil {
+            
+            if segue.identifier == "topSegue" {
+                let clothingSelectorVC = segue.destinationViewController as! ValuePickerViewController
+                clothingSelectorVC.selectedCategory = ClothingCategory.Top
+            }
+            if segue.identifier == "bottomSegue" {
+                let clothingSelectorVC = segue.destinationViewController as! ValuePickerViewController
+                clothingSelectorVC.selectedCategory = ClothingCategory.Bottom
+            }
+            if segue.identifier == "accessorySegue" {
+                let clothingSelectorVC = segue.destinationViewController as! ValuePickerViewController
+                clothingSelectorVC.selectedCategory = ClothingCategory.Accessory
+            }
+            if segue.identifier == "shoeSegue" {
+                let clothingSelectorVC = segue.destinationViewController as! ValuePickerViewController
+                clothingSelectorVC.selectedCategory = ClothingCategory.Shoe
+            }
+        }
     }
-    */
 
 }
