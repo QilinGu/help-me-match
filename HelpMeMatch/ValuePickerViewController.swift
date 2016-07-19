@@ -13,6 +13,8 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     // MARK: - IBOutlets
     
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var selectionLabel: UILabel!
     
     
     // MARK: - Stored Properties
@@ -55,7 +57,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerSelection.count
     }
-
+    
     
     // MARK: - UIPickerViewDelegate
     
@@ -64,12 +66,17 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     
-    // MARK: - Target/Action
-    
-    @IBAction func selectValue(sender: AnyObject) {
-        
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectionLabel.text = pickerSelection[row]
     }
     
+    
+    // MARK: - Target/Action
+    
+    // unwinds to main menu upon confirming the clothing selection
+    @IBAction func confirmButtonTapped(sender: AnyObject) {
+        self.performSegueWithIdentifier("unwindToMenu", sender: self)
+    }
     
     // MARK: - Life Cycle
     
@@ -77,6 +84,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         super.viewDidLoad()
         
         loadClothingData()
+        categoryLabel.text = selectedCategory.getString()
         pickerView.dataSource = self
         pickerView.delegate = self
         
@@ -87,6 +95,6 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
- 
+    
 }
 

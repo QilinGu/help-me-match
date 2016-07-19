@@ -9,14 +9,29 @@
 import Foundation
 
 
-// MARK: - Clothing Categories
+// MARK: - Structs
 
 enum ClothingCategory: Int {
     case Top = 0
     case Bottom
     case Shoe
     case Accessory
+    
+    func getString() -> String {
+        switch self {
+        case .Top:
+            return "Tops"
+        case .Bottom:
+            return "Bottoms"
+        case .Accessory:
+            return "Accessories"
+        case .Shoe:
+            return "Shoes"
+        }
+    }
 }
+
+
 // MARK: - Protocols
 
 protocol Top {
