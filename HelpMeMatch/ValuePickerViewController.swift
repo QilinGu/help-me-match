@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ValuePickerViewController: UIViewController, UIPickerViewDataSource{
+/*class ValuePickerViewController: UIViewController {
     
     // MARK: - IBOutlets 
     
@@ -19,7 +19,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource{
     
     var clothingDescriptors: NSMutableArray!
     var selectedCategory: ClothingCategory
-    var pickerSelection: [String]
+    var pickerSelection: [String] = []
     
     
     // MARK: - Custom Functions
@@ -33,10 +33,12 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource{
     
     // populates the current datasource of the picker view with the appropriate category
     func setupPickerSelection() {
-        let currentCategory: NSMutableArray = clothingDescriptors[selectedCategory.rawValue] as! NSMutableArray
+        // get the current clothing category
+        let currentCategory: [[String : AnyObject]] = clothingDescriptors[selectedCategory.rawValue] as! [[String : AnyObject]]
         
+        // loop through each item within the category and append its display name to the list
         for item in currentCategory {
-            pickerSelection.append(item["displayName"])
+            pickerSelection.append(item["displayName"] as! String)
         }
     }
     
@@ -72,4 +74,6 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource{
     @IBAction func selectValue(sender: AnyObject) {
         
     }
+ 
 }
+ */
