@@ -22,6 +22,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     var clothingDescriptors: NSMutableArray! = []
     var selectedCategory: ClothingCategory = ClothingCategory.Top
     var pickerSelection: [String] = []
+    var currentSelection: String = ""
     
     
     // MARK: - Custom Functions
@@ -67,7 +68,8 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectionLabel.text = pickerSelection[row]
+        currentSelection = pickerSelection[row]
+        selectionLabel.text = currentSelection
     }
     
     
@@ -75,7 +77,10 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // unwinds to main menu upon confirming the clothing selection
     @IBAction func confirmButtonTapped(sender: AnyObject) {
+        // FIXME: Insert function to retrieve plist properties here!
+        CurrentSelection.currentTop.name = currentSelection
         self.performSegueWithIdentifier("unwindToMenu", sender: self)
+        
     }
     
     // MARK: - Life Cycle
@@ -87,7 +92,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         categoryLabel.text = selectedCategory.getString()
         pickerView.dataSource = self
         pickerView.delegate = self
-        
+
     }
     
     

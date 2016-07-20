@@ -35,42 +35,46 @@ enum ClothingCategory: Int {
 // MARK: - Protocols
 
 protocol Top {
-    var isLongSleeved: Bool { get }
-    var isShortSleeved: Bool { get }
-    var isButtoned: Bool { get }
-    var isZippered: Bool { get }
-    var isOuterWear: Bool { get }
-    var isSportsWear: Bool { get }
-    var isFormal: Bool { get }
-    var isCasual: Bool { get }
+    var name: String { get set }
+    var isLongSleeved: Bool { get set }
+    var isShortSleeved: Bool { get set }
+    var isButtoned: Bool { get set }
+    var isZippered: Bool { get set }
+    var isOuterWear: Bool { get set }
+    var isSportsWear: Bool { get set }
+    var isFormal: Bool { get set }
+    var isCasual: Bool { get set }
 }
 
 
 protocol Bottom {
-    var isShorts: Bool { get }
-    var isPants: Bool { get }
-    var isJeans: Bool { get }
-    var isFormal: Bool { get }
-    var isSportsWear: Bool { get }
+    var name: String { get set }
+    var isShorts: Bool { get set }
+    var isPants: Bool { get set }
+    var isJeans: Bool { get set }
+    var isFormal: Bool { get set }
+    var isSportsWear: Bool { get set }
 }
 
 
 protocol Shoe {
-    var isSneakers: Bool { get }
-    var isBoots: Bool { get }
-    var isSandals: Bool { get }
-    var isFormal: Bool { get }
-    var isSportsWear: Bool { get }
+    var name: String { get set }
+    var isSneakers: Bool { get set }
+    var isBoots: Bool { get set }
+    var isSandals: Bool { get set }
+    var isFormal: Bool { get set }
+    var isSportsWear: Bool { get set }
     
 }
 
 
 protocol Accessory {
-    var isWatch: Bool { get }
-    var isNecklace: Bool { get }
-    var isHat: Bool { get }
-    var isFormal: Bool { get }
-    var isSportsWear: Bool { get }
+    var name: String { get set }
+    var isWatch: Bool { get set }
+    var isNecklace: Bool { get set }
+    var isHat: Bool { get set }
+    var isFormal: Bool { get set }
+    var isSportsWear: Bool { get set }
 }
 
 
