@@ -19,17 +19,18 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // MARK: - Stored Properties
     
-    var clothingDescriptors: NSMutableArray! = []
+    var categoryData: [[String : AnyObject]] = [[:]]
     var selectedCategory: ClothingCategory = ClothingCategory.Top
     var pickerSelection: [String] = []
-    var currentSelection: String = ""
+    var userSelection: String = ""
     
     
     // MARK: - Custom Functions
     
     func loadClothingData() {
         if let path = NSBundle.mainBundle().pathForResource("ClothingDescriptor", ofType: "plist") {
-            clothingDescriptors = NSMutableArray(contentsOfFile: path)
+            let clothingDescriptors = NSMutableArray(contentsOfFile: path)
+            categoryData = clothingDescriptors![selectedCategory.rawValue] as! [[String : AnyObject]]
             setupPickerSelection()
         }
     }
@@ -37,12 +38,18 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // populates the current datasource of the picker view with the appropriate category
     func setupPickerSelection() {
-        // get the current clothing category
-        let currentCategory: [[String : AnyObject]] = clothingDescriptors[selectedCategory.rawValue] as! [[String : AnyObject]]
         // loop through each item within the category and append its display name to the list
-        for item in currentCategory {
+        for item in categoryData {
             pickerSelection.append(item["displayName"] as! String)
         }
+    }
+    
+    
+    // sets up the view based on the current category selection
+    func setupView() {
+        categoryLabel.text = selectedCategory.getString()
+        pickerView.dataSource = self
+        pickerView.delegate = self
     }
 
     
@@ -68,8 +75,8 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        currentSelection = pickerSelection[row]
-        selectionLabel.text = currentSelection
+        userSelection = pickerSelection[row]
+        selectionLabel.text = userSelection
     }
     
     
@@ -78,7 +85,9 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     // unwinds to main menu upon confirming the clothing selection
     @IBAction func confirmButtonTapped(sender: AnyObject) {
         // FIXME: Insert function to retrieve plist properties here!
-        CurrentSelection.currentTop.name = currentSelection
+        CurrentSelection.storeSelectionData(userSelection, selectedCategory: selectedCategory, categoryData: categoryData)
+        print(CurrentSelection.currentTop.name)
+        print(CurrentSelection.currentTop.isFormal)
         self.performSegueWithIdentifier("unwindToMenu", sender: self)
         
     }
@@ -89,10 +98,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         super.viewDidLoad()
         
         loadClothingData()
-        categoryLabel.text = selectedCategory.getString()
-        pickerView.dataSource = self
-        pickerView.delegate = self
-
+        setupView()
     }
     
     
