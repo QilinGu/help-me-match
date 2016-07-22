@@ -15,7 +15,8 @@ import Foundation
 struct CurrentSelection {
     static var currentTop: Top = defaultTop()
     static var currentBottom: Bottom = defaultBottom()
-    static var currentAccessories: Accessory = defaultAccessory()
+    // using a dictionary to store all the current accessories, want constant lookup for checking specific accessories
+    static var currentAccessories: [String : Accessory] = [:]
     static var currentShoes: Shoe = defaultShoe()
     
     // called when a button is pressed, checks the users outfit against criteria & offers recommendations
@@ -46,7 +47,6 @@ struct CurrentSelection {
         for item in categoryData {
             if item["displayName"] as! String == name {
                 currentClothingItemData = item
-                print("got here")
             }
         }
         // now that we have the data for the item, we change the appropriate member variable in CurrentSelection
@@ -61,8 +61,32 @@ struct CurrentSelection {
             CurrentSelection.currentTop.isSportsWear = currentClothingItemData["isSportsWear"] as! Bool
             CurrentSelection.currentTop.isCasual = currentClothingItemData["isCasual"] as! Bool
             CurrentSelection.currentTop.isFormal = currentClothingItemData["isFormal"] as! Bool
-        default:
-            print("nothing")
+        case .Bottom:
+            CurrentSelection.currentBottom.name = currentClothingItemData["displayName"] as! String
+            CurrentSelection.currentBottom.isShorts = currentClothingItemData["isShorts"] as! Bool
+            CurrentSelection.currentBottom.isPants = currentClothingItemData["isPants"] as! Bool
+            CurrentSelection.currentBottom.isJeans = currentClothingItemData["isJeans"] as! Bool
+            CurrentSelection.currentBottom.isFormal = currentClothingItemData["isFormal"] as! Bool
+            CurrentSelection.currentBottom.isSportsWear = currentClothingItemData["isSportsWear"] as! Bool
+        case .Shoe:
+            CurrentSelection.currentShoes.name = currentClothingItemData["displayName"] as! String
+            CurrentSelection.currentShoes.isSneakers = currentClothingItemData["isSneakers"] as! Bool
+            CurrentSelection.currentShoes.isBoots = currentClothingItemData["isBoots"] as! Bool
+            CurrentSelection.currentShoes.isSandals = currentClothingItemData["isSandals"] as! Bool
+            CurrentSelection.currentShoes.isFormal = currentClothingItemData["isFormal"] as! Bool
+            CurrentSelection.currentShoes.isSportsWear = currentClothingItemData["isSportsWear"] as! Bool
+        case .Accessory:
+            // unlike the other categories, that can't have more than one item, a user can have multiple accessories.
+            // to accomodate this, create an instance of an accessory item and add to the dictionary
+            var currentAccessoryItem: Accessory = defaultAccessory()
+            currentAccessoryItem.name = currentClothingItemData["displayName"] as! String
+            currentAccessoryItem.isWatch = currentClothingItemData["isWatch"] as! Bool
+            currentAccessoryItem.isNecklace = currentClothingItemData["isNecklace"] as! Bool
+            currentAccessoryItem.isHat = currentClothingItemData["isHat"] as! Bool
+            currentAccessoryItem.isFormal = currentClothingItemData["isFormal"] as! Bool
+            currentAccessoryItem.isSportsWear = currentClothingItemData["isSportsWear"] as! Bool
+            
+            currentAccessories[name] = currentAccessoryItem
         }
     }
     

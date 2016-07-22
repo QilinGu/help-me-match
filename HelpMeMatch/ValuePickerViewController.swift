@@ -27,15 +27,6 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // MARK: - Custom Functions
     
-    func loadClothingData() {
-        if let path = NSBundle.mainBundle().pathForResource("ClothingDescriptor", ofType: "plist") {
-            let clothingDescriptors = NSMutableArray(contentsOfFile: path)
-            categoryData = clothingDescriptors![selectedCategory.rawValue] as! [[String : AnyObject]]
-            setupPickerSelection()
-        }
-    }
-    
-    
     // populates the current datasource of the picker view with the appropriate category
     func setupPickerSelection() {
         // loop through each item within the category and append its display name to the list
@@ -43,7 +34,6 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
             pickerSelection.append(item["displayName"] as! String)
         }
     }
-    
     
     // sets up the view based on the current category selection
     func setupView() {
@@ -97,7 +87,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadClothingData()
+        categoryData = DataHelper.loadClothingData(selectedCategory)
         setupView()
     }
     
