@@ -37,6 +37,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // sets up the view based on the current category selection
     func setupView() {
+        setupPickerSelection()
         categoryLabel.text = selectedCategory.getString()
         pickerView.dataSource = self
         pickerView.delegate = self
@@ -74,10 +75,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // unwinds to main menu upon confirming the clothing selection
     @IBAction func confirmButtonTapped(sender: AnyObject) {
-        // FIXME: Insert function to retrieve plist properties here!
         CurrentSelection.storeSelectionData(userSelection, selectedCategory: selectedCategory, categoryData: categoryData)
-        print(CurrentSelection.currentTop.name)
-        print(CurrentSelection.currentTop.isFormal)
         self.performSegueWithIdentifier("unwindToMenu", sender: self)
         
     }
