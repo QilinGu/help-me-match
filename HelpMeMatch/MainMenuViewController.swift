@@ -9,20 +9,22 @@
 import UIKit
 
 class MainMenuViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    //MARK: - Navigation
+    // MARK: - IBOutets
+    
+    // clothing labels
+    @IBOutlet weak var currentTop: UILabel!
+    @IBOutlet weak var currentBottoms: UILabel!
+    @IBOutlet weak var currentShoes: UILabel!
+    @IBOutlet weak var currentAccessories: UILabel!
+    // color labels
+    @IBOutlet weak var currentTopColor: UIView!
+    @IBOutlet weak var currentBottomsColor: UIView!
+    @IBOutlet weak var currentShoesColor: UIView!
+    @IBOutlet weak var currentAccessoriesColor: UIView!
+    
+    
+    // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -49,5 +51,20 @@ class MainMenuViewController: UIViewController {
     
     
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
+    
+    
+    // MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
 
 }

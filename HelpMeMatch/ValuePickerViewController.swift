@@ -15,6 +15,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var selectionLabel: UILabel!
+    @IBOutlet weak var currentColor: UIView!
     
     
     // MARK: - Stored Properties
@@ -75,9 +76,40 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // unwinds to main menu upon confirming the clothing selection
     @IBAction func confirmButtonTapped(sender: AnyObject) {
-        CurrentSelection.storeSelectionData(userSelection, selectedCategory: selectedCategory, categoryData: categoryData)
+        CurrentSelection.storeSelectionData(userSelection, selectedCategory: selectedCategory,
+                                            categoryData: categoryData, currentColor: currentColor.backgroundColor!)
         self.performSegueWithIdentifier("unwindToMenu", sender: self)
         
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier != nil {
+            
+            if segue.identifier == "unwindToMenu" {
+                let mainMenuVC = segue.destinationViewController as! MainMenuViewController
+                
+                // only update the label that was pressed
+                switch selectedCategory {
+                case ClothingCategory.Top:
+                    mainMenuVC.currentTop.text = CurrentSelection.currentTop.name
+                    mainMenuVC.currentTopColor.backgroundColor = CurrentSelection.currentTop.color
+                case ClothingCategory.Bottom:
+                    mainMenuVC.currentBottoms.text = CurrentSelection.currentBottom.name
+                    mainMenuVC.currentBottomsColor.backgroundColor = CurrentSelection.currentBottom.color
+                case ClothingCategory.Shoe:
+                    mainMenuVC.currentShoes.text = CurrentSelection.currentShoes.name
+                    mainMenuVC.currentShoesColor.backgroundColor = CurrentSelection.currentShoes.color
+                case ClothingCategory.Accessory:
+                    if let accessory = CurrentSelection.currentAccessories["Dress Watch"]?.name {
+                        mainMenuVC.currentAccessories.text = accessory
+                    }
+                }
+                
+            }
+        }
     }
     
     // MARK: - Life Cycle

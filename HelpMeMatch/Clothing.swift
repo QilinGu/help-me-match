@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 // MARK: - Structs
@@ -36,6 +37,7 @@ enum ClothingCategory: Int {
 
 protocol Top {
     var name: String { get set }
+    var color: UIColor { get set }
     var isLongSleeved: Bool { get set }
     var isShortSleeved: Bool { get set }
     var isButtoned: Bool { get set }
@@ -49,6 +51,7 @@ protocol Top {
 
 protocol Bottom {
     var name: String { get set }
+    var color: UIColor { get set }
     var isShorts: Bool { get set }
     var isPants: Bool { get set }
     var isJeans: Bool { get set }
@@ -59,6 +62,7 @@ protocol Bottom {
 
 protocol Shoe {
     var name: String { get set }
+    var color: UIColor { get set }
     var isSneakers: Bool { get set }
     var isBoots: Bool { get set }
     var isSandals: Bool { get set }
@@ -70,6 +74,7 @@ protocol Shoe {
 
 protocol Accessory {
     var name: String { get set }
+    var color: UIColor { get set }
     var isWatch: Bool { get set }
     var isNecklace: Bool { get set }
     var isHat: Bool { get set }
