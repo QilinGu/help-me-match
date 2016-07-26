@@ -13,12 +13,6 @@ internal protocol HSBColorPickerDelegate : NSObjectProtocol {
     func HSBColorColorPickerTouched(sender: HSBColorPicker, color: UIColor, point: CGPoint, state: UIGestureRecognizerState)
 }
 
-internal protocol HSBColorPickerDataSource {
-    var userSelectedColor: ColorCategory { get set }
-    var colorForSelectionBox: UIColor { get set }
-    
-    func passSelectedValue(category: ColorCategory, color: UIColor)
-}
 
 @IBDesignable
 class HSBColorPicker : UIView {
