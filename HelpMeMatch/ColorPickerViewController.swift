@@ -12,6 +12,9 @@ class ColorPickerViewController: UIViewController, HSBColorPickerDelegate {
     
     //MARK: - Stored Properties
     
+    // created a DataSource protocol so I could pass data back over to the selector view controller via the passSelectedValue() function
+    var datasource: HSBColorPickerDataSource?
+    var selectorColor: ColorCategory?
     
     // MARK: - IBOutlet Properties
     
@@ -25,7 +28,9 @@ class ColorPickerViewController: UIViewController, HSBColorPickerDelegate {
     // Attached to the small selection, changes its color to the user selection
     func HSBColorColorPickerTouched(sender: HSBColorPicker, color: UIColor, point: CGPoint, state: UIGestureRecognizerState) {
         currentColor.backgroundColor = color
-        colorLabel.text = ColorHelper.getColorCategory(point.x, colorSelectorWidth: colorPicker.bounds.width)
+        selectorColor = ColorHelper.getColorCategory(point.x, colorSelectorWidth: colorPicker.bounds.width)
+        colorLabel.text = selectorColor?.getStringForCategory()
+        datasource?.passSelectedValue(selectorColor!, color: color)
     }
     
     //MARK: - Life Cycle

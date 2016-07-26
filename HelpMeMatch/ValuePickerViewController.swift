@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate,
+    UIPopoverPresentationControllerDelegate, HSBColorPickerDataSource {
     
     // MARK: - IBOutlets
     // labels
@@ -27,6 +28,9 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     var pickerSelection: [String] = []
     var userSelection: String = ""
     var userSelectedColor: ColorCategory = ColorCategory.Black
+    // color for selection box may not line up with the category exactly, doesn't matter for the backend
+    var colorForSelectionBox: UIColor = UIColor.blackColor()
+    
  
     
     // MARK: - Custom Functions
@@ -87,6 +91,21 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     
+    // MARK: - HSBColorPickerDataSource Functions
+    
+    func passSelectedValue(category: ColorCategory, color: UIColor) {
+        userSelectedColor = category
+        currentColor.backgroundColor = color
+    }
+    
+    // MARK: - UIPopoverPresentationControllerDelegate Functions
+    
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
+    
+    
     // MARK: - Target/Action
     
     // unwinds to main menu upon confirming the clothing selection
@@ -142,9 +161,19 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
                         mainMenuVC.currentAccessories.text = accessory
                     }
                 }
-                
+            }
+            
+            if segue.identifier == "showColorPicker" {
+                let vc = segue.destinationViewController as! ColorPickerViewController
+                // SET THE DATASOURCE TO THIS VIEW CONTROLLER TO ENABLE USE OF FUNCTION TO PASS DATA!!
+                vc.datasource = self
+                let controller = vc.popoverPresentationController
+                if controller != nil {
+                    controller?.delegate = self
+                }
             }
         }
+        
     }
     
     // MARK: - Life Cycle

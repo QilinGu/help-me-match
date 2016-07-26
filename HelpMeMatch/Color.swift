@@ -149,15 +149,15 @@ struct DefaultColors {
 // x-coordinate provided must be relative to the ColorPicker view
 class ColorHelper {
     // helper function that returns a category name for a provided location on the ColorPicker
-    class func getColorCategory(x: CGFloat, colorSelectorWidth: CGFloat) -> String {
+    class func getColorCategory(x: CGFloat, colorSelectorWidth: CGFloat) -> ColorCategory {
         let colorSegmentWidth: CGFloat = colorSelectorWidth / 22.0
         
         if (0.0 <= x && x < (0.5 * colorSegmentWidth)) {
-            return "red"
+            return ColorCategory.Red
         }
         
         if ((colorSelectorWidth - (0.5 * colorSegmentWidth) <= x && x < colorSegmentWidth)) {
-            return "red"
+            return ColorCategory.Red
         }
         
         for i in 0...20 {
@@ -165,11 +165,11 @@ class ColorHelper {
             // | 1/2 R | 1 G | 1 B | 1/2 R |
             // so to compensate its shifted half a segment
             if ((CGFloat(i) * colorSegmentWidth) <= x && x < ((CGFloat(i + 1) * colorSegmentWidth) + (0.5 * colorSegmentWidth))) {
-                return (ColorCategory(rawValue: i + 1)?.getStringForCategory())!
+                return ColorCategory(rawValue: i + 1)!
             }
         }
 
-        return "red"
+        return ColorCategory.Red
     }
     
 }
