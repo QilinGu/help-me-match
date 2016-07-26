@@ -11,11 +11,13 @@ import UIKit
 class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - IBOutlets
-    
+    // labels
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var selectionLabel: UILabel!
     @IBOutlet weak var currentColor: UIView!
+    // array of the color buttons
+    @IBOutlet var colorButtons: [UIButton]!
     
     
     // MARK: - Stored Properties
@@ -24,11 +26,12 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     var selectedCategory: ClothingCategory = ClothingCategory.Top
     var pickerSelection: [String] = []
     var userSelection: String = ""
-    
+    var userSelectedColor: ColorCategory = ColorCategory.Black
+ 
     
     // MARK: - Custom Functions
     
-    // populates the current datasource of the picker view with the appropriate category
+    // populates the current datasource of the picker view with the appropriate category data
     func setupPickerSelection() {
         // loop through each item within the category and append its display name to the list
         for item in categoryData {
@@ -36,10 +39,22 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
     }
     
+    // populates the buttons on the selection view
+    func setupDefaultColors() {
+        var i = 0
+        // loop through the buttons and set their background colors appropriately
+        // i is based off their order in the array
+        for button in colorButtons {
+            button.backgroundColor = DefaultColors.color[i].getUIColor()
+            i += 1
+        }
+    }
+ 
     // sets up the view based on the current category selection
     func setupView() {
         setupPickerSelection()
         categoryLabel.text = selectedCategory.getString()
+        setupDefaultColors() 
         pickerView.dataSource = self
         pickerView.delegate = self
     }
@@ -81,6 +96,26 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.performSegueWithIdentifier("unwindToMenu", sender: self)
         
     }
+    
+    
+    @IBAction func neutralColorTapped(sender: UIButton) {
+        // each button's tag is set to the appropriate raw integer value of its ColorCategory representation
+        // after setting the userSelectedColor saved attribute, reflect the user selection on the bottom view
+        userSelectedColor = ColorCategory(rawValue: sender.tag)!
+        currentColor.backgroundColor = sender.backgroundColor
+        
+        // turn highlighted status of the selected button on, all other buttons off
+        sender.layer.borderWidth = 3
+        sender.layer.borderColor = UIColor.yellowColor().CGColor
+        
+        for button in colorButtons {
+            if button.tag != sender.tag {
+                button.layer.borderWidth = 0.5
+                button.layer.borderColor = UIColor.blackColor().CGColor
+            }
+        }        
+    }
+    
     
     // MARK: - Navigation
     

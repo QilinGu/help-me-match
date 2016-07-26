@@ -9,8 +9,11 @@
 import Foundation
 import UIKit
 
-// Basic model for the color categories, split up into 21 colors based on hue values
-enum Category: Int {
+
+// MARK: - ColorPicker color model
+
+// basic color model for the ColorPicker, split up into 21 color categories based on hue values
+enum ColorCategory: Int {
     case Red = 0
     case OrangeRed
     case Orange
@@ -33,6 +36,33 @@ enum Category: Int {
     case Pink
     case ReddishPink
     case PinkishRed
+    // neutral colors range from 22-27
+    case Black = 22
+    case White = 23
+    case Gray = 24
+    case Navy = 25
+    case Brown = 26
+    case Khaki = 27
+    
+    // used for neutral colors
+    func getUIColor() -> UIColor {
+        switch self {
+        case .Black:
+            return UIColor.blackColor()
+        case .White:
+            return UIColor.whiteColor()
+        case .Gray:
+            return UIColor.grayColor()
+        case .Navy:
+            return UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 128.0/255.0, alpha: 1.0)
+        case .Brown:
+            return UIColor.brownColor()
+        case .Khaki:
+            return UIColor(red: 240.0/255.0, green: 230.0/255.0, blue: 140.0/255.0, alpha: 1.0)
+        default:
+            return UIColor.yellowColor()
+        }
+    }
     
     func getStringForCategory() -> String {
         // keeping the raw value of the Category enum as an int for utility in other functions,
@@ -82,16 +112,45 @@ enum Category: Int {
             return "reddish pink"
         case .PinkishRed:
             return "pinkish red"
+        case .Black:
+            return "black"
+        case .White:
+            return "white"
+        case .Gray:
+            return "gray"
+        case .Navy:
+            return "navy"
+        case .Brown:
+            return "brown"
+        case .Khaki:
+            return "khaki"
         }
     }
 }
 
 
-// Helper class for dealing with selected colors, x-coordinate must be relative to the ColorPicker view.
+/// used to populate the default color buttons
+struct DefaultColors {
+    
+    static var color: [ColorCategory] = [
+        ColorCategory.Black,
+        ColorCategory.White,
+        ColorCategory.Gray,
+        ColorCategory.Navy,
+        ColorCategory.Brown,
+        ColorCategory.Khaki
+    ]
+}
+
+
+// MARK: - Helper Class
+
+// helper class for dealing with user-selected colors
+// x-coordinate provided must be relative to the ColorPicker view
 class ColorHelper {
-    // helper class that returns a Color
+    // helper function that returns a category name for a provided location on the ColorPicker
     class func getColorCategory(x: CGFloat, colorSelectorWidth: CGFloat) -> String {
-        let colorSegmentWidth: CGFloat = colorSelectorWidth / 21.0
+        let colorSegmentWidth: CGFloat = colorSelectorWidth / 22.0
         
         if (0.0 <= x && x < (0.5 * colorSegmentWidth)) {
             return "red"
@@ -101,12 +160,12 @@ class ColorHelper {
             return "red"
         }
         
-        for i in 0...19 {
+        for i in 0...20 {
             // ColorPicker was split up weird 
             // | 1/2 R | 1 G | 1 B | 1/2 R |
             // so to compensate its shifted half a segment
             if ((CGFloat(i) * colorSegmentWidth) <= x && x < ((CGFloat(i + 1) * colorSegmentWidth) + (0.5 * colorSegmentWidth))) {
-                return (Category(rawValue: i + 1)?.getStringForCategory())!
+                return (ColorCategory(rawValue: i + 1)?.getStringForCategory())!
             }
         }
 
