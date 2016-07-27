@@ -14,37 +14,26 @@ import UIKit
 
 // basic color model for the ColorPicker, split up into 21 color categories based on hue values
 enum ColorCategory: Int {
-    case Red = 0
-    case OrangeRed
+    case ReddishViolet = 0
+    case Red
     case Orange
-    case OrangeYellow
     case Yellow
-    case GreenishYellow
     case YellowishGreen
     case Green
     case BluishGreen
-    case GreenishBlue
     case Cyan
-    case LightBlue
     case SkyBlue
     case Blue
-    case DarkBlue
-    case PurplishBlue
-    case BluishPurple
-    case Purple
-    case PinkishPurple
+    case Violet
     case Pink
-    case ReddishPink
-    case PinkishRed
-    // neutral colors range from 22-27
-    case Black = 22
-    case White = 23
-    case Gray = 24
-    case Navy = 25
-    case Brown = 26
-    case Khaki = 27
+    case Black  // start of the neutral colors (12 - 17)
+    case White
+    case Gray
+    case Navy
+    case Brown
+    case Khaki
     
-    // used for neutral colors
+    // used for neutral color buttons
     func getUIColor() -> UIColor {
         switch self {
         case .Black:
@@ -70,48 +59,28 @@ enum ColorCategory: Int {
         switch self {
         case .Red:
             return "red"
-        case .OrangeRed :
-            return "orange red"
         case .Orange:
             return "orange"
-        case .OrangeYellow:
-            return "orange yellow"
         case .Yellow:
             return "yellow"
-        case .GreenishYellow:
-            return "greenish yellow"
         case .YellowishGreen:
             return "yellowish green"
         case .Green:
             return "green"
         case .BluishGreen:
             return "bluish green"
-        case .GreenishBlue:
-            return "greenish blue"
         case .Cyan:
             return "cyan"
-        case .LightBlue:
-            return "light blue"
         case .SkyBlue:
             return "sky blue"
         case .Blue:
             return "blue"
-        case .DarkBlue:
-            return "dark blue"
-        case .PurplishBlue:
-            return "purplish blue"
-        case .BluishPurple:
-            return "bluish purple"
-        case .Purple:
-            return "purple"
-        case .PinkishPurple:
-            return "pinkish purple"
+        case .Violet:
+            return "violet"
         case .Pink:
             return "pink"
-        case .ReddishPink:
-            return "reddish pink"
-        case .PinkishRed:
-            return "pinkish red"
+        case .ReddishViolet:
+            return "reddish violet"
         case .Black:
             return "black"
         case .White:
@@ -141,49 +110,4 @@ struct DefaultColors {
         ColorCategory.Khaki
     ]
 }
-
-
-// MARK: - Helper Class
-
-// helper class for dealing with user-selected colors
-// x-coordinate provided must be relative to the ColorPicker view
-class ColorHelper {
-    // helper function that returns a category name for a provided location on the ColorPicker
-    class func getColorCategory(x: CGFloat, colorSelectorWidth: CGFloat) -> ColorCategory {
-        let colorSegmentWidth: CGFloat = colorSelectorWidth / 22.0
-        
-        if (0.0 <= x && x < (0.5 * colorSegmentWidth)) {
-            return ColorCategory.Red
-        }
-        
-        if ((colorSelectorWidth - (0.5 * colorSegmentWidth) <= x && x < colorSegmentWidth)) {
-            return ColorCategory.Red
-        }
-        
-        for i in 0...20 {
-            // ColorPicker was split up weird 
-            // | 1/2 R | 1 G | 1 B | 1/2 R |
-            // so to compensate its shifted half a segment
-            if ((CGFloat(i) * colorSegmentWidth) <= x && x < ((CGFloat(i + 1) * colorSegmentWidth) + (0.5 * colorSegmentWidth))) {
-                return ColorCategory(rawValue: i + 1)!
-            }
-        }
-
-        return ColorCategory.Red
-    }
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 

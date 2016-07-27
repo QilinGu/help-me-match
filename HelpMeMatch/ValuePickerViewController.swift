@@ -36,7 +36,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // MARK: - Target/Action
     
-    // unwind to main menu upon confirming the clothing selection
+    // store data from selected item and then unwind to main menu
     @IBAction func confirmButtonTapped(sender: AnyObject) {
         CurrentSelection.storeSelectionData(userItemSelection, selectedCategory: selectedCategory,
                                             categoryData: categoryData, currentColor: currentColor.backgroundColor!)
@@ -59,6 +59,11 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
                 button.layer.borderColor = UIColor.blackColor().CGColor
             }
         }
+    }
+    
+    // triggered when the "Pick a custom color" button is pressed
+    @IBAction func showPopover(sender: AnyObject) {
+        performSegueWithIdentifier("showColorPicker", sender: self)
     }
     
     
@@ -101,7 +106,6 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         return 1
     }
     
-    
     // returns the number of rows in each component
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerChoices.count
@@ -123,7 +127,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // MARK: - ColorPickerDelegate Functions
     
-    // performed when a user selectes a color button
+    // performed when a user selects a color button
     func passSelectedValue(category: ColorCategory, color: UIColor) {
         // reflect the userSelectedColor in the currentColor view
         currentColor.backgroundColor = color
@@ -132,8 +136,8 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         selectionLabel.text = userSelectedColorCategory.getStringForCategory()
     }
     
-    // MARK: - UIPopoverPresentationControllerDelegate Functions
     
+    // MARK: - UIPopoverPresentationControllerDelegate Functions
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return .None
@@ -169,6 +173,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
                 // setup the destination view
                 let vc = segue.destinationViewController as! ColorPickViewController
                 vc.delegate = self
+                vc.preferredContentSize = CGSizeMake(336, 320)
                 // prepare the destination view to be used as a popup presentation
                 let controller = vc.popoverPresentationController
                 if controller != nil {
@@ -178,6 +183,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
             
         }
     }
+    
     
     // MARK: - Life Cycle
     
