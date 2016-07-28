@@ -33,55 +33,29 @@ class ColorPickViewController: UIViewController {
     
     var delegate: ColorPickerDelegate?
     var colorButtons: [UIButton] = []
+    var colorSelectionCategory: ColorCategory?
     
     
     // MARK: - Target/Action
     
-    func colorButtonPressed(sender:UIButton){
+    func colorButtonPressed(sender: UIButton){
+        // 12 columns allign with the 12 color categories, mod the button tag by 12 to get the column #
+        colorSelectionCategory = ColorCategory(rawValue: sender.tag % 12)
+        colorCategoryLabel.text = colorSelectionCategory!.getStringForCategory()
+        
+        // change the selection view to reflect the pressed button's color
         colorSelectionLabel.backgroundColor = sender.backgroundColor
-        // switch on the tag modded by 12, so we get the columns
-        // the column numbers allign with the associated raw values in the ColorCategory enum
-        // first reflect the selection in the ColorPicker, then send the information to its parent VC
-        switch sender.tag % 12 {
-        case 0:  // reddish violet
-            colorCategoryLabel.text = ColorCategory(rawValue: 0)!.getStringForCategory()
-            delegate?.passSelectedValue(ColorCategory(rawValue: 0)!, color: sender.backgroundColor!)
-        case 1:  // red
-            colorCategoryLabel.text = ColorCategory(rawValue: 1)!.getStringForCategory()
-            delegate?.passSelectedValue(ColorCategory(rawValue: 1)!, color: sender.backgroundColor!)
-        case 2:  // orange
-            colorCategoryLabel.text = ColorCategory(rawValue: 2)!.getStringForCategory()
-            delegate?.passSelectedValue(ColorCategory(rawValue: 2)!, color: sender.backgroundColor!)
-        case 3:  // yellow
-            colorCategoryLabel.text = ColorCategory(rawValue: 3)!.getStringForCategory()
-            delegate?.passSelectedValue(ColorCategory(rawValue: 3)!, color: sender.backgroundColor!)
-        case 4:  // yellowish green
-            colorCategoryLabel.text = ColorCategory(rawValue: 4)!.getStringForCategory()
-            delegate?.passSelectedValue(ColorCategory(rawValue: 4)!, color: sender.backgroundColor!)
-        case 5:  // green
-            colorCategoryLabel.text = ColorCategory(rawValue: 5)!.getStringForCategory()
-            delegate?.passSelectedValue(ColorCategory(rawValue: 5)!, color: sender.backgroundColor!)
-        case 6:  // bluish green
-            colorCategoryLabel.text = ColorCategory(rawValue: 6)!.getStringForCategory()
-            delegate?.passSelectedValue(ColorCategory(rawValue: 6)!, color: sender.backgroundColor!)
-        case 7:  // cyan
-            colorCategoryLabel.text = ColorCategory(rawValue: 7)!.getStringForCategory()
-            delegate?.passSelectedValue(ColorCategory(rawValue: 7)!, color: sender.backgroundColor!)
-        case 8:  // sky blue
-            colorCategoryLabel.text = ColorCategory(rawValue: 8)!.getStringForCategory()
-            delegate?.passSelectedValue(ColorCategory(rawValue: 8)!, color: sender.backgroundColor!)
-        case 9:  // blue
-            colorCategoryLabel.text = ColorCategory(rawValue: 9)!.getStringForCategory()
-            delegate?.passSelectedValue(ColorCategory(rawValue: 9)!, color: sender.backgroundColor!)
-        case 10: // violet
-            colorCategoryLabel.text = ColorCategory(rawValue: 10)!.getStringForCategory()
-            delegate?.passSelectedValue(ColorCategory(rawValue: 10)!, color: sender.backgroundColor!)
-        case 11: // pink
-            colorCategoryLabel.text = ColorCategory(rawValue: 11)!.getStringForCategory()
-            delegate?.passSelectedValue(ColorCategory(rawValue: 11)!, color: sender.backgroundColor!)
-        default:
-            break
+        
+        // highlight the button pressed and unhighlight all others
+        highlightButton(sender)
+    }
+    
+    // only change the current selection if the confirm button is tapped
+    @IBAction func confirmButtonTapped() {
+        if let selectedColor = colorSelectionCategory {
+            delegate?.passSelectedValue(selectedColor, color: colorSelectionLabel.backgroundColor!)
         }
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     
@@ -105,6 +79,19 @@ class ColorPickViewController: UIViewController {
                 action: #selector(ColorPickViewController.colorButtonPressed(_:)),
                 forControlEvents: UIControlEvents.TouchUpInside)
             
+        }
+    }
+    
+    // highlights the pressed button and unhighlights the rest
+    func highlightButton(sender: UIButton) {
+        // highlight the pressed button
+        sender.layer.borderWidth = 3
+        
+        // reset all other buttons
+        for button in colorButtons {
+            if button.tag != sender.tag {
+                button.layer.borderWidth = 0
+            }
         }
     }
     

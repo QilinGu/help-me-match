@@ -17,7 +17,10 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var selectionLabel: UILabel!
+    @IBOutlet weak var customColorLabel: UILabel!
+    @IBOutlet weak var customColorSelection: UIButton!
     @IBOutlet weak var currentColor: UIView!
+    
     // array of "neutral colors" buttons
     @IBOutlet var colorButtons: [UIButton]!
     
@@ -28,6 +31,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     var categoryData: [[String : AnyObject]] = [[:]]
     var selectedCategory: ClothingCategory = ClothingCategory.Top
     var pickerChoices: [String] = []
+    
     // user selected data
     var userItemSelection: String = ""
     var userSelectedColorCategory: ColorCategory = ColorCategory.Black  // what is displayed as the user-choice
@@ -38,8 +42,11 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // store data from selected item and then unwind to main menu
     @IBAction func confirmButtonTapped(sender: AnyObject) {
+        // store the user selected information in the backend
         CurrentSelection.storeSelectionData(userItemSelection, selectedCategory: selectedCategory,
                                             categoryData: categoryData, currentColor: currentColor.backgroundColor!)
+        
+        // return back to the original menu and update the appropriate labels
         self.performSegueWithIdentifier("unwindToMenu", sender: self)
     }
     
@@ -49,20 +56,13 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         // after setting the userSelectedColorCategory store property, reflect the user selection in the currentColor view
         userSelectedColorCategory = ColorCategory(rawValue: sender.tag)!
         currentColor.backgroundColor = sender.backgroundColor
-        // add yellow border around selected button
-        sender.layer.borderWidth = 3
-        sender.layer.borderColor = UIColor.yellowColor().CGColor
-        // reset all other buttons to black
-        for button in colorButtons {
-            if button.tag != sender.tag {
-                button.layer.borderWidth = 0.5
-                button.layer.borderColor = UIColor.blackColor().CGColor
-            }
-        }
+        
+        // reflect selection in the view
+        highlightButton(sender)
     }
     
     // triggered when the "Pick a custom color" button is pressed
-    @IBAction func showPopover(sender: AnyObject) {
+    @IBAction func pickColorButtonTapped(sender: AnyObject) {
         performSegueWithIdentifier("showColorPicker", sender: self)
     }
     
@@ -78,12 +78,30 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     // populate the buttons on the selection view
-    func setupDefaultColors() {
-        var i = 0
+    func setupColorButtons() {
         // loop through the buttons and set their background colors appropriately
-        for button in colorButtons {
-            button.backgroundColor = DefaultColors.color[i].getUIColor()
+        var i = 0
+        while i < 6 {
+            colorButtons[i].backgroundColor = DefaultColors.color[i].getUIColor()
             i += 1  // based off their order in the "DefaultColors.color" array
+        }
+        
+        // set the custom color button's color to gray
+        customColorSelection.backgroundColor = UIColor.grayColor()
+    }
+    
+    // highlights the pressed button in yellow, removing highlights from all other buttons
+    func highlightButton(sender: UIButton) {
+        // highlight the pressed button
+        sender.layer.borderWidth = 3
+        sender.layer.borderColor = UIColor.yellowColor().CGColor
+        
+        // reset all other buttons to black
+        for button in colorButtons {
+            if button.tag != sender.tag {
+                button.layer.borderWidth = 0.5
+                button.layer.borderColor = UIColor.blackColor().CGColor
+            }
         }
     }
  
@@ -93,9 +111,10 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         setupPickerChoices()
         pickerView.dataSource = self
         pickerView.delegate = self
+        
         // front-end setup
         categoryLabel.text = selectedCategory.getString()
-        setupDefaultColors()
+        setupColorButtons()
     }
 
     
@@ -129,11 +148,16 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // performed when a user selects a color button
     func passSelectedValue(category: ColorCategory, color: UIColor) {
-        // reflect the userSelectedColor in the currentColor view
+        // reflect the userSelectedColor in the currentColor view and customColorSelection button
+        customColorSelection.backgroundColor = color
         currentColor.backgroundColor = color
+        
         // save the userSelectedColorCategory, then reflect the choice in the selectionLabel
         userSelectedColorCategory = category
-        selectionLabel.text = userSelectedColorCategory.getStringForCategory()
+        customColorLabel.text = userSelectedColorCategory.getStringForCategory()
+        
+        // highlight the customColorSelection button and unhighlight all the other buttons
+        highlightButton(customColorSelection)
     }
     
     
@@ -148,6 +172,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier != nil {
+            
             // triggered when the confirm button is pressed
             if segue.identifier == "unwindToMenu" {
                 let mainMenuVC = segue.destinationViewController as! MainMenuViewController
@@ -168,6 +193,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
                     }
                 }
             }
+            
             // triggered when the "Pick a custom color" button is pressed
             if segue.identifier == "showColorPicker" {
                 // setup the destination view
@@ -191,6 +217,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         super.viewDidLoad()
         // load the appropriate category data in from the plist file
         categoryData = DataHelper.loadClothingData(selectedCategory)
+        
         // setup the view
         setupView()
     }
