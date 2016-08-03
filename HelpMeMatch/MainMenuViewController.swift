@@ -28,9 +28,6 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var shoesColor: UIImageView!
     
     
-    
-    
-    
     // MARK: - Target/Action
     
     @IBAction func doIMatchButtonTapped(sender: AnyObject) {
