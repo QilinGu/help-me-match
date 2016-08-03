@@ -14,7 +14,6 @@ import UIKit
 
 protocol ColorPickerDelegate {
     var userSelectedColorCategory: ColorCategory { get set }
-    var userSelectedColor: UIColor { get set }
     
     func passSelectedValue(category: ColorCategory, color: UIColor)
 }

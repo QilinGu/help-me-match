@@ -27,9 +27,6 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // MARK: - Stored Properties
     
-    // delegate
-    var delegate: MainMenuViewController!
-    
     // information for the view
     var categoryData: [[String : AnyObject]] = [[:]]
     var selectedCategory: ClothingCategory = ClothingCategory.Top
@@ -38,7 +35,6 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     // user selected data
     var userItemSelection: String = ""
     var userSelectedColorCategory: ColorCategory = ColorCategory.Black  // what is displayed as the user-choice
-    var userSelectedColor: UIColor = UIColor.blackColor()   // how the user-choice is categorized and stored
     
     // color picker data
     var currentCustomColorCategory: ColorCategory?
@@ -51,8 +47,10 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     // store data from selected item and then unwind to main menu
     @IBAction func confirmButtonTapped(sender: AnyObject) {
         // store the user selected information in the backend
-        CurrentSelection.storeSelectionData(userItemSelection, selectedCategory: selectedCategory,
-                                            categoryData: categoryData, currentColor: currentColor.backgroundColor!)
+        CurrentSelection.storeSelectionData(userItemSelection,
+                                            selectedCategory: selectedCategory,
+                                            categoryData: categoryData,
+                                            currentColorCategory: userSelectedColorCategory)
         
         // return back to the original menu and update the appropriate labels
         self.performSegueWithIdentifier("unwindToMenu", sender: self)
@@ -201,22 +199,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
             // triggered when the confirm button is pressed
             if segue.identifier == "unwindToMenu" {
                 let mainMenuVC = segue.destinationViewController as! MainMenuViewController
-                // only update the category that was initially selected
-                switch selectedCategory {
-                case ClothingCategory.Top:
-                    mainMenuVC.currentTop.text = CurrentSelection.currentTop.name
-                    mainMenuVC.currentTopColor.backgroundColor = CurrentSelection.currentTop.color
-                case ClothingCategory.Bottom:
-                    mainMenuVC.currentBottoms.text = CurrentSelection.currentBottom.name
-                    mainMenuVC.currentBottomsColor.backgroundColor = CurrentSelection.currentBottom.color
-                case ClothingCategory.Shoe:
-                    mainMenuVC.currentShoes.text = CurrentSelection.currentShoes.name
-                    mainMenuVC.currentShoesColor.backgroundColor = CurrentSelection.currentShoes.color
-                case ClothingCategory.Accessory:
-                    if let accessory = CurrentSelection.currentAccessories["Dress Watch"]?.name {
-                        mainMenuVC.currentAccessories.text = accessory
-                    }
-                }
+                mainMenuVC.updateView(clothingCategory: selectedCategory, color: currentColor.backgroundColor!)
             }
             
             // triggered when the "Pick a custom color" button is pressed

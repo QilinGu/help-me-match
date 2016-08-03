@@ -25,10 +25,11 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var currentAccessoriesColor: UIView!
     
     // clothing image views
-    @IBOutlet weak var tshirtImage: UIImageView!
-    @IBOutlet weak var pantsImage: UIImageView!
-    @IBOutlet weak var shoeImage1: UIImageView!
-    @IBOutlet weak var shoeImage2: UIImageView!
+    
+    @IBOutlet weak var tshirtColor: UIImageView!
+    @IBOutlet weak var pantsColor: UIImageView!
+    @IBOutlet weak var shoesColor: UIImageView!
+    
     
     
     
@@ -45,8 +46,6 @@ class MainMenuViewController: UIViewController {
         
         if segue.identifier != nil {
             let clothingSelectorVC = segue.destinationViewController as! ValuePickerViewController
-            // set the delegate to this view controller
-            clothingSelectorVC.delegate = self
             // loads the appropriate category's information by setting the selectedCategory
             clothingSelectorVC.selectedCategory = ClothingCategory(rawValue: Int(segue.identifier!)!)!
                 // segue identifiers correspond to the appropriate ClothingCategory's raw integer value
@@ -59,12 +58,31 @@ class MainMenuViewController: UIViewController {
     
     // MARK: - View Setup Functions
     
-    func updateView() {
-        
+    // triggered when the confirm button is pressed, sets up the MainMenuView the user is returning to
+    func updateView(clothingCategory category: ClothingCategory, color: UIColor) {
+        // only update the category that was initially selected
+        switch category {
+        case ClothingCategory.Top:
+            currentTop.text = CurrentSelection.currentTop.name
+            currentTopColor.backgroundColor = color
+            tshirtColor.tintColor = color
+        case ClothingCategory.Bottom:
+            currentBottoms.text = CurrentSelection.currentBottom.name
+            currentBottomsColor.backgroundColor = color
+            pantsColor.tintColor = color
+        case ClothingCategory.Shoe:
+            currentShoes.text = CurrentSelection.currentShoes.name
+            currentShoesColor.backgroundColor = color
+            shoesColor.tintColor = color
+        case ClothingCategory.Accessory:
+            print("yw")
+        }
     }
     
     func setupView() {
-        tshirtImage.image = UIImage(named: "tshirt")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        tshirtColor.image = UIImage(named: "shirt_colorPortion")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        pantsColor.image = UIImage(named: "pants_colorPortion")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        shoesColor.image = UIImage(named: "shoes_colorPortion")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
     }
     
     func setupImageView( ) {}

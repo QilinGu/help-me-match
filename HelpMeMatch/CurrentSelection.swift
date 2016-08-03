@@ -41,7 +41,8 @@ struct CurrentSelection {
     }
     
     // used within the selection screen, stores the data from a user's current selection into the appropriate CurrentSelection member variable
-    static func storeSelectionData(name: String, selectedCategory: ClothingCategory, categoryData: [[String : AnyObject]], currentColor: UIColor) {
+    static func storeSelectionData(name: String, selectedCategory: ClothingCategory, categoryData: [[String : AnyObject]],
+                                   currentColorCategory: ColorCategory) {
         // variable to store the current item's data
         var currentClothingItemData = [:]
         // have to check our array to find the correct item (would use a dictionary but I want to maintain ordering for the picker view)
@@ -53,7 +54,7 @@ struct CurrentSelection {
                 switch selectedCategory {
                 case .Top:
                     CurrentSelection.currentTop.name = currentClothingItemData["displayName"] as! String
-                    CurrentSelection.currentTop.color = currentColor
+                    CurrentSelection.currentTop.color = currentColorCategory
                     CurrentSelection.currentTop.isShortSleeved = currentClothingItemData["isShortSleeved"] as! Bool
                     CurrentSelection.currentTop.isLongSleeved = currentClothingItemData["isLongSleeved"] as! Bool
                     CurrentSelection.currentTop.isButtoned = currentClothingItemData["isButtoned"] as! Bool
@@ -64,7 +65,7 @@ struct CurrentSelection {
                     CurrentSelection.currentTop.isFormal = currentClothingItemData["isFormal"] as! Bool
                 case .Bottom:
                     CurrentSelection.currentBottom.name = currentClothingItemData["displayName"] as! String
-                    CurrentSelection.currentBottom.color = currentColor
+                    CurrentSelection.currentBottom.color = currentColorCategory
                     CurrentSelection.currentBottom.isShorts = currentClothingItemData["isShorts"] as! Bool
                     CurrentSelection.currentBottom.isPants = currentClothingItemData["isPants"] as! Bool
                     CurrentSelection.currentBottom.isJeans = currentClothingItemData["isJeans"] as! Bool
@@ -72,7 +73,7 @@ struct CurrentSelection {
                     CurrentSelection.currentBottom.isSportsWear = currentClothingItemData["isSportsWear"] as! Bool
                 case .Shoe:
                     CurrentSelection.currentShoes.name = currentClothingItemData["displayName"] as! String
-                    CurrentSelection.currentShoes.color = currentColor
+                    CurrentSelection.currentShoes.color = currentColorCategory
                     CurrentSelection.currentShoes.isSneakers = currentClothingItemData["isSneakers"] as! Bool
                     CurrentSelection.currentShoes.isBoots = currentClothingItemData["isBoots"] as! Bool
                     CurrentSelection.currentShoes.isSandals = currentClothingItemData["isSandals"] as! Bool
@@ -102,7 +103,7 @@ struct CurrentSelection {
 
 struct defaultTop: Top {
     var name: String = "T-shirt"
-    var color: UIColor = UIColor.grayColor()
+    var color: ColorCategory = ColorCategory.Black
     var isLongSleeved: Bool = false
     var isShortSleeved: Bool = true
     var isButtoned: Bool = false
@@ -115,7 +116,7 @@ struct defaultTop: Top {
 
 struct defaultBottom: Bottom {
     var name: String = "Shorts"
-    var color: UIColor = UIColor.grayColor()
+    var color: ColorCategory = ColorCategory.Black
     var isShorts: Bool = true
     var isPants: Bool = false
     var isJeans: Bool = false
@@ -125,7 +126,7 @@ struct defaultBottom: Bottom {
 
 struct defaultShoe: Shoe {
     var name: String = "Casual sneakers"
-    var color: UIColor = UIColor.grayColor()
+    var color: ColorCategory = ColorCategory.Black
     var isSneakers: Bool = true
     var isBoots: Bool = false
     var isSandals: Bool = false
@@ -135,7 +136,7 @@ struct defaultShoe: Shoe {
 
 struct defaultAccessory: Accessory {
     var name: String = "casualwatch"
-    var color: UIColor = UIColor.grayColor()
+    var color: ColorCategory = ColorCategory.Black
     var isWatch: Bool = true
     var isNecklace: Bool = false
     var isHat: Bool = false

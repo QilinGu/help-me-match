@@ -299,7 +299,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="vyA-a3-zGF" kind="presentation" identifier="bottomSegue" id="Tzy-za-fPW"/>
+                                            <segue destination="vyA-a3-zGF" kind="presentation" identifier="1" id="Tzy-za-fPW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9Y-I9-Rwu">
@@ -311,7 +311,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="+"/>
                                         <connections>
-                                            <segue destination="vyA-a3-zGF" kind="presentation" identifier="shoeSegue" id="gkb-GL-R1G"/>
+                                            <segue destination="vyA-a3-zGF" kind="presentation" identifier="2" id="gkb-GL-R1G"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScY-PA-HVC">
@@ -380,7 +380,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="vyA-a3-zGF" kind="presentation" identifier="topSegue" id="zya-nk-i0a"/>
+                                            <segue destination="vyA-a3-zGF" kind="presentation" identifier="0" id="zya-nk-i0a"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -432,7 +432,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJl-4r-y31">
                                 <rect key="frame" x="87" y="101" width="240" height="300"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tshirt" translatesAutoresizingMaskIntoConstraints="NO" id="0Yr-w0-wRq">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shirt_colorPortion" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-qs-8fL">
+                                        <rect key="frame" x="0.0" y="10" width="125" height="125"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="125" id="0Yz-ob-2Qe"/>
+                                            <constraint firstAttribute="width" constant="125" id="Qf2-J2-tVa"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shirt_outline" translatesAutoresizingMaskIntoConstraints="NO" id="0Yr-w0-wRq">
                                         <rect key="frame" x="0.0" y="10" width="125" height="125"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -440,23 +448,7 @@
                                             <constraint firstAttribute="height" constant="125" id="AAQ-vi-NIQ"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="26I-Os-Hov">
-                                        <rect key="frame" x="133" y="232" width="60" height="60"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="349-TM-tON"/>
-                                            <constraint firstAttribute="height" constant="60" id="An8-b8-KUo"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="b5T-wA-qNE">
-                                        <rect key="frame" x="133" y="200" width="60" height="60"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="IKt-h6-XWW"/>
-                                            <constraint firstAttribute="width" constant="60" id="ZQO-eU-9da"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pants" translatesAutoresizingMaskIntoConstraints="NO" id="sDs-74-G6R">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pants_colorPortion" translatesAutoresizingMaskIntoConstraints="NO" id="sDs-74-G6R">
                                         <rect key="frame" x="0.0" y="150" width="125" height="125"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -464,24 +456,64 @@
                                             <constraint firstAttribute="height" constant="125" id="zaK-Cp-CQl"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pants_outline" translatesAutoresizingMaskIntoConstraints="NO" id="f7r-rj-L6x">
+                                        <rect key="frame" x="0.0" y="150" width="125" height="125"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="125" id="wU7-Np-uaM"/>
+                                            <constraint firstAttribute="width" constant="125" id="zk3-rD-zat"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes_outline" translatesAutoresizingMaskIntoConstraints="NO" id="HbF-Ei-m7w">
+                                        <rect key="frame" x="133" y="200" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="et3-Va-3hX"/>
+                                            <constraint firstAttribute="width" constant="75" id="hj0-iI-jMt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes_colorPortion" translatesAutoresizingMaskIntoConstraints="NO" id="BFA-gs-CNU">
+                                        <rect key="frame" x="133" y="200" width="75" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="NG5-IT-GTG"/>
+                                            <constraint firstAttribute="width" constant="75" id="W81-Wk-rNI"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="26I-Os-Hov" secondAttribute="bottom" constant="8" id="5te-NG-Arg"/>
-                                    <constraint firstItem="26I-Os-Hov" firstAttribute="top" secondItem="b5T-wA-qNE" secondAttribute="bottom" constant="-28" id="7Nh-X3-eS6"/>
+                                    <constraint firstItem="sDs-74-G6R" firstAttribute="centerX" secondItem="f7r-rj-L6x" secondAttribute="centerX" id="0Ej-du-59q"/>
+                                    <constraint firstItem="f7r-rj-L6x" firstAttribute="leading" secondItem="sDs-74-G6R" secondAttribute="trailing" constant="-125" id="271-Rv-zmZ"/>
+                                    <constraint firstItem="sDs-74-G6R" firstAttribute="centerY" secondItem="f7r-rj-L6x" secondAttribute="centerY" id="2bS-Ni-IDW"/>
+                                    <constraint firstItem="MRI-qs-8fL" firstAttribute="centerY" secondItem="0Yr-w0-wRq" secondAttribute="centerY" id="3ha-2l-kFT"/>
+                                    <constraint firstItem="BFA-gs-CNU" firstAttribute="centerY" secondItem="HbF-Ei-m7w" secondAttribute="centerY" id="6da-xy-raK"/>
+                                    <constraint firstItem="MRI-qs-8fL" firstAttribute="centerX" secondItem="0Yr-w0-wRq" secondAttribute="centerX" id="B2W-5F-iPL"/>
+                                    <constraint firstAttribute="bottom" secondItem="HbF-Ei-m7w" secondAttribute="bottom" constant="25" id="CMV-fq-DNt"/>
                                     <constraint firstItem="sDs-74-G6R" firstAttribute="leading" secondItem="VJl-4r-y31" secondAttribute="leading" id="G28-ou-Kr4"/>
-                                    <constraint firstItem="26I-Os-Hov" firstAttribute="leading" secondItem="sDs-74-G6R" secondAttribute="trailing" constant="8" id="Yhd-bE-Bdb"/>
-                                    <constraint firstItem="b5T-wA-qNE" firstAttribute="leading" secondItem="sDs-74-G6R" secondAttribute="trailing" constant="8" id="Zgi-Qp-r1t"/>
+                                    <constraint firstItem="HbF-Ei-m7w" firstAttribute="leading" secondItem="f7r-rj-L6x" secondAttribute="trailing" constant="8" id="RE3-VM-Yax"/>
+                                    <constraint firstItem="MRI-qs-8fL" firstAttribute="leading" secondItem="0Yr-w0-wRq" secondAttribute="trailing" constant="-125" id="X1J-OW-YId"/>
+                                    <constraint firstItem="MRI-qs-8fL" firstAttribute="top" secondItem="0Yr-w0-wRq" secondAttribute="top" id="Yc0-BE-yaS"/>
                                     <constraint firstItem="0Yr-w0-wRq" firstAttribute="top" secondItem="VJl-4r-y31" secondAttribute="top" constant="10" id="aLe-ml-P0x"/>
                                     <constraint firstItem="sDs-74-G6R" firstAttribute="top" secondItem="0Yr-w0-wRq" secondAttribute="bottom" constant="15" id="gKq-qD-a2M"/>
+                                    <constraint firstItem="f7r-rj-L6x" firstAttribute="top" secondItem="sDs-74-G6R" secondAttribute="bottom" constant="-125" id="gyx-ox-YcU"/>
+                                    <constraint firstItem="BFA-gs-CNU" firstAttribute="centerX" secondItem="HbF-Ei-m7w" secondAttribute="centerX" id="hKc-Hr-Wtd"/>
+                                    <constraint firstItem="f7r-rj-L6x" firstAttribute="centerX" secondItem="0Yr-w0-wRq" secondAttribute="centerX" id="jMa-QG-86n"/>
                                     <constraint firstItem="0Yr-w0-wRq" firstAttribute="leading" secondItem="VJl-4r-y31" secondAttribute="leading" id="k7g-2i-EPe"/>
                                     <constraint firstAttribute="height" constant="300" id="lXB-ie-Fns"/>
+                                    <constraint firstItem="f7r-rj-L6x" firstAttribute="top" secondItem="0Yr-w0-wRq" secondAttribute="bottom" constant="15" id="nNy-lP-Cb9"/>
                                     <constraint firstItem="sDs-74-G6R" firstAttribute="centerX" secondItem="0Yr-w0-wRq" secondAttribute="centerX" id="vgp-L1-DFs"/>
                                     <constraint firstAttribute="width" constant="240" id="xfV-1Z-cK0"/>
+                                    <constraint firstItem="MRI-qs-8fL" firstAttribute="top" secondItem="0Yr-w0-wRq" secondAttribute="bottom" constant="-125" id="zXZ-M1-xtj"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="X1J-OW-YId"/>
+                                        <exclude reference="Yc0-BE-yaS"/>
+                                        <exclude reference="zXZ-M1-xtj"/>
+                                        <exclude reference="271-Rv-zmZ"/>
+                                        <exclude reference="gyx-ox-YcU"/>
                                         <exclude reference="G28-ou-Kr4"/>
+                                        <exclude reference="gKq-qD-a2M"/>
+                                        <exclude reference="vgp-L1-DFs"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -515,10 +547,9 @@
                         <outlet property="currentShoesColor" destination="DF9-Ii-oV8" id="cBj-ns-BPG"/>
                         <outlet property="currentTop" destination="ScY-PA-HVC" id="hfd-yi-icb"/>
                         <outlet property="currentTopColor" destination="E8W-Ug-LbK" id="SrJ-6Y-Irb"/>
-                        <outlet property="pantsImage" destination="sDs-74-G6R" id="B8r-52-wUD"/>
-                        <outlet property="shoeImage1" destination="b5T-wA-qNE" id="Ubb-nf-AcD"/>
-                        <outlet property="shoeImage2" destination="26I-Os-Hov" id="mXq-sT-INl"/>
-                        <outlet property="tshirtImage" destination="0Yr-w0-wRq" id="6MY-gg-a45"/>
+                        <outlet property="pantsColor" destination="sDs-74-G6R" id="hLA-xN-d1N"/>
+                        <outlet property="shoesColor" destination="BFA-gs-CNU" id="Lh3-g5-sSa"/>
+                        <outlet property="tshirtColor" destination="MRI-qs-8fL" id="NvO-1l-NUf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lay-yy-tEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1207,11 +1238,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pants" width="256" height="256"/>
-        <image name="shoes" width="512" height="512"/>
-        <image name="tshirt" width="512" height="512"/>
+        <image name="pants_colorPortion" width="256" height="256"/>
+        <image name="pants_outline" width="256" height="256"/>
+        <image name="shirt_colorPortion" width="512" height="512"/>
+        <image name="shirt_outline" width="512" height="512"/>
+        <image name="shoes_colorPortion" width="640" height="480"/>
+        <image name="shoes_outline" width="640" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tzy-za-fPW"/>
+        <segue reference="zya-nk-i0a"/>
     </inferredMetricsTieBreakers>
 </document>
