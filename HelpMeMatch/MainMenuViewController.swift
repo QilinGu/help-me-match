@@ -16,16 +16,13 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var currentTop: UILabel!
     @IBOutlet weak var currentBottoms: UILabel!
     @IBOutlet weak var currentShoes: UILabel!
-    @IBOutlet weak var currentAccessories: UILabel!
     
     // color labels
     @IBOutlet weak var currentTopColor: UIView!
     @IBOutlet weak var currentBottomsColor: UIView!
     @IBOutlet weak var currentShoesColor: UIView!
-    @IBOutlet weak var currentAccessoriesColor: UIView!
     
     // clothing image views
-    
     @IBOutlet weak var tshirtColor: UIImageView!
     @IBOutlet weak var pantsColor: UIImageView!
     @IBOutlet weak var shoesColor: UIImageView!
