@@ -27,6 +27,9 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     // MARK: - Stored Properties
     
+    // delegate
+    var delegate: MainMenuViewController!
+    
     // information for the view
     var categoryData: [[String : AnyObject]] = [[:]]
     var selectedCategory: ClothingCategory = ClothingCategory.Top
@@ -36,6 +39,11 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     var userItemSelection: String = ""
     var userSelectedColorCategory: ColorCategory = ColorCategory.Black  // what is displayed as the user-choice
     var userSelectedColor: UIColor = UIColor.blackColor()   // how the user-choice is categorized and stored
+    
+    // color picker data
+    var currentCustomColorCategory: ColorCategory?
+    var currentCustomColor: UIColor?
+    
     
     
     // MARK: - Target/Action
@@ -60,6 +68,19 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         // reflect selection in the view
         highlightButton(sender)
     }
+    
+    @IBAction func customColorTapped(sender: UIButton) {
+        // only respond to the button being pressed if a custom color has been selected
+        if let colorCategory = currentCustomColorCategory, let color = currentCustomColor {
+            // take the stored custom color information and set the current selection to it
+            userSelectedColorCategory = colorCategory
+            currentColor.backgroundColor = color
+            
+            // reflect selection in the view
+            highlightButton(sender)
+        }
+    }
+    
     
     // triggered when the "Pick a custom color" button is pressed
     @IBAction func pickColorButtonTapped(sender: AnyObject) {
@@ -111,6 +132,7 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
         setupPickerChoices()
         pickerView.dataSource = self
         pickerView.delegate = self
+        pickerView(pickerView, didSelectRow: 0, inComponent: 0)  // default selection in case the user doesn't move the PickerView wheel
         
         // front-end setup
         categoryLabel.text = selectedCategory.getString()
@@ -149,10 +171,13 @@ class ValuePickerViewController: UIViewController, UIPickerViewDataSource, UIPic
     // performed when a user selects a color button
     func passSelectedValue(category: ColorCategory, color: UIColor) {
         // reflect the userSelectedColor in the currentColor view and customColorSelection button
+        currentCustomColor = color
         customColorSelection.backgroundColor = color
         currentColor.backgroundColor = color
         
+        
         // save the userSelectedColorCategory, then reflect the choice in the selectionLabel
+        currentCustomColorCategory = category
         userSelectedColorCategory = category
         customColorLabel.text = userSelectedColorCategory.getStringForCategory()
         
