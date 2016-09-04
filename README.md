@@ -4,7 +4,7 @@ The repository contains the source files for the iOS application I'm developing 
 ![alt text](https://github.com/ajrcodes/help-me-match/blob/master/image_HelpMeMatch.png "Help Me Match")
 
 #Goal of this project
-While I'm happy with the actual premise of this application, this project was used mainly as a learning experience over my sophomore year summer.  I was interested in mobile app development at the start of the summer, so I started off by watching and reading some tutorials online to learn the basics of Swift.  But even though I was doing these tutorials on my own accord, I felt as if they were too structured and still didn't think I was branching out from the realm of instructor-led programming.  I needed a project to run with whenever I wanted to program, something that would actually force me to experiment and get some practical experience in the "real world" of computer science.   
+While I'm happy with the actual premise of this application, this project was used mainly as a learning experience over my sophomore year summer.  I was interested in mobile app development at the start of the summer, so I started off by watching and reading some tutorials online to learn the basics of Swift.  But even though I was doing these tutorials on my own accord, I felt as if they were too structured and still didn't think I was branching out enough from the realm of instructor-led programming.  I needed a project to run with whenever I wanted to program, something that would actually force me to experiment and get some practical experience in the "real world" of computer science.   
 
    This project became just that for me.    
    
