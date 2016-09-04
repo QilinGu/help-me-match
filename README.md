@@ -4,16 +4,16 @@ The repository contains the source files for the iOS application I'm developing 
 ![alt text](https://github.com/ajrcodes/help-me-match/blob/master/image_HelpMeMatch.png "Help Me Match")
 
 #Goal of this project
-While I'm happy with the actual premise of this application, I really used this project as a learning experience over my sophomore year summer.  I started off with some tutorials online to learn the basics of Swift, but I wanted something to just run with and actual create something tangible.  Even though it's not completely finished and polished, I'm happy with how its coming and the progress I've made.
-###What I gained while working on this project:
+While I'm happy with the actual premise of this application, this project was used mainly as a learning experience over my sophomore year summer.  I was initially interested in mobile app development, so I started off by watching and reading some tutorials online to learn the basics of Swift.  But I still didn't know "where to go next" in a sense, and felt like I needed something to just run with when I wanted to program.  I'm pretty big into fashion, so this application became a way for me to bridge two of my passions in a productive way.  
+###While working on this project, I gained...
 - Proficiency in Swift
-- Understanding of the MVC design pattern
+- An understanding of the MVC design pattern
 - Familiarity and working knowledge of Cocoa Touch 
-- Ability to use Xcode efficiently (including Interface Builder and Auto Layout)
-- Practice using GitHub 
-- Practice parsing through MANY Stack Overflow posts to find what I needed
+- The ability to use Xcode efficiently (including Interface Builder and Auto Layout)
+- Experience with GitHub 
+- The skill of parsing through Stack Overflow posts
  
-**Above all else, I learned that my CS education could be translated to the real world...** 
+**And, above all else, I learned that my CS education could be translated to the real world...** 
 and that was pretty cool.
 
 #In progress:
