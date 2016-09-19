@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		100700171D3ACBD800F1440B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100700161D3ACBD800F1440B /* Color.swift */; };
-		1007001B1D3BF70D00F1440B /* ScrollSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1007001A1D3BF70D00F1440B /* ScrollSelector.xib */; };
 		1007001D1D3D620600F1440B /* Clothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1007001C1D3D620600F1440B /* Clothing.swift */; };
 		10582AB51D3D71B6005612DE /* ClothingDescriptor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10582AB41D3D71B6005612DE /* ClothingDescriptor.plist */; };
 		10582AB71D3D9D57005612DE /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10582AB61D3D9D57005612DE /* MainMenuViewController.swift */; };
@@ -22,9 +21,6 @@
 		109515A81D2212EF00BE33BE /* HelpMeMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515A71D2212EF00BE33BE /* HelpMeMatchTests.swift */; };
 		109515B31D2212EF00BE33BE /* HelpMeMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515B21D2212EF00BE33BE /* HelpMeMatchUITests.swift */; };
 		109515C31D22143C00BE33BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109515C21D22143C00BE33BE /* LaunchScreen.storyboard */; };
-		109515C51D22165A00BE33BE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109515C41D22165A00BE33BE /* MenuViewController.swift */; };
-		109515C81D221EBA00BE33BE /* NormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109515C71D221EBA00BE33BE /* NormalCell.xib */; };
-		109515CA1D221F4200BE33BE /* ValuePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 109515C91D221F4200BE33BE /* ValuePickerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		100700161D3ACBD800F1440B /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		1007001A1D3BF70D00F1440B /* ScrollSelector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollSelector.xib; sourceTree = "<group>"; };
 		1007001C1D3D620600F1440B /* Clothing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clothing.swift; sourceTree = "<group>"; };
 		10582AB41D3D71B6005612DE /* ClothingDescriptor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ClothingDescriptor.plist; sourceTree = "<group>"; };
 		10582AB61D3D9D57005612DE /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -66,9 +61,6 @@
 		109515B21D2212EF00BE33BE /* HelpMeMatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMeMatchUITests.swift; sourceTree = "<group>"; };
 		109515B41D2212EF00BE33BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		109515C21D22143C00BE33BE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
-		109515C41D22165A00BE33BE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		109515C71D221EBA00BE33BE /* NormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalCell.xib; sourceTree = "<group>"; };
-		109515C91D221F4200BE33BE /* ValuePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValuePickerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100843821D8F964300F560D5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				10582AB81D3FF01A005612DE /* CurrentSelection.swift */,
+				10582ABA1D419F00005612DE /* DataHelper.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		107D8B7A1D2473D900DD449E /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,13 +139,11 @@
 			isa = PBXGroup;
 			children = (
 				10582AB61D3D9D57005612DE /* MainMenuViewController.swift */,
-				10582AB81D3FF01A005612DE /* CurrentSelection.swift */,
-				10582ABA1D419F00005612DE /* DataHelper.swift */,
 				109515921D2212EF00BE33BE /* AppDelegate.swift */,
 				109515961D2212EF00BE33BE /* Main.storyboard */,
 				107D8B7B1D24756000DD449E /* ValuePicker */,
 				107D8B7A1D2473D900DD449E /* ColorPicker */,
-				109515C61D221E6900BE33BE /* Expandable Menu */,
+				100843821D8F964300F560D5 /* Data */,
 				10582AB41D3D71B6005612DE /* ClothingDescriptor.plist */,
 				1095159E1D2212EF00BE33BE /* Info.plist */,
 				109515C21D22143C00BE33BE /* LaunchScreen.storyboard */,
@@ -169,17 +168,6 @@
 				109515B41D2212EF00BE33BE /* Info.plist */,
 			);
 			path = HelpMeMatchUITests;
-			sourceTree = "<group>";
-		};
-		109515C61D221E6900BE33BE /* Expandable Menu */ = {
-			isa = PBXGroup;
-			children = (
-				109515C41D22165A00BE33BE /* MenuViewController.swift */,
-				109515C71D221EBA00BE33BE /* NormalCell.xib */,
-				109515C91D221F4200BE33BE /* ValuePickerCell.xib */,
-				1007001A1D3BF70D00F1440B /* ScrollSelector.xib */,
-			);
-			name = "Expandable Menu";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,11 +280,8 @@
 			files = (
 				10582ABF1D518428005612DE /* Images.xcassets in Resources */,
 				109515C31D22143C00BE33BE /* LaunchScreen.storyboard in Resources */,
-				1007001B1D3BF70D00F1440B /* ScrollSelector.xib in Resources */,
-				109515CA1D221F4200BE33BE /* ValuePickerCell.xib in Resources */,
 				10582AB51D3D71B6005612DE /* ClothingDescriptor.plist in Resources */,
 				109515981D2212EF00BE33BE /* Main.storyboard in Resources */,
-				109515C81D221EBA00BE33BE /* NormalCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +311,6 @@
 				100700171D3ACBD800F1440B /* Color.swift in Sources */,
 				10582ABD1D47EE48005612DE /* ColorPickViewController.swift in Sources */,
 				107D8B7D1D2475C900DD449E /* ValuePickerViewController.swift in Sources */,
-				109515C51D22165A00BE33BE /* MenuViewController.swift in Sources */,
 				10582ABB1D419F00005612DE /* DataHelper.swift in Sources */,
 				10582AB91D3FF01A005612DE /* CurrentSelection.swift in Sources */,
 				109515931D2212EF00BE33BE /* AppDelegate.swift in Sources */,
