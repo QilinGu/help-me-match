@@ -592,7 +592,7 @@
                                 </userDefinedRuntimeAttributes>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rea-d5-bnF">
-                                <rect key="frame" x="70" y="608" width="95" height="20"/>
+                                <rect key="frame" x="70" y="598" width="95" height="20"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Color selection">
@@ -632,7 +632,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbT-r9-5iF">
-                                <rect key="frame" x="20" y="578" width="145" height="20"/>
+                                <rect key="frame" x="20" y="568" width="145" height="20"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="145" id="ngm-DD-LVU"/>
@@ -650,7 +650,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXw-e5-hsY">
-                                <rect key="frame" x="165" y="578" width="229" height="20"/>
+                                <rect key="frame" x="165" y="568" width="229" height="20"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Clothing item selection">
@@ -673,7 +673,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="947-Ra-hl1">
-                                <rect key="frame" x="267" y="606" width="25" height="25"/>
+                                <rect key="frame" x="267" y="596" width="25" height="25"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="EKK-E9-NPc"/>
@@ -1117,7 +1117,7 @@
                             <constraint firstItem="fjV-6H-7FP" firstAttribute="centerX" secondItem="NLY-mG-TZA" secondAttribute="centerX" id="lZf-B6-dRZ"/>
                             <constraint firstItem="KAz-lA-Lwb" firstAttribute="leading" secondItem="kbT-r9-5iF" secondAttribute="trailing" constant="-82" id="mPy-Uv-Ww7"/>
                             <constraint firstItem="947-Ra-hl1" firstAttribute="centerX" secondItem="lXw-e5-hsY" secondAttribute="centerX" id="n5o-bs-rEQ"/>
-                            <constraint firstItem="kbT-r9-5iF" firstAttribute="top" secondItem="reN-MR-aJU" secondAttribute="bottom" constant="45" id="nF8-PQ-omG"/>
+                            <constraint firstItem="kbT-r9-5iF" firstAttribute="top" secondItem="reN-MR-aJU" secondAttribute="bottom" constant="35" id="nF8-PQ-omG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lXw-e5-hsY" secondAttribute="trailing" id="nGX-V2-ahy"/>
                             <constraint firstItem="YBD-Q9-bT6" firstAttribute="leading" secondItem="el4-hV-0en" secondAttribute="trailing" constant="15" id="omT-2n-LDh"/>
                             <constraint firstItem="7jM-m0-6o1" firstAttribute="top" secondItem="XYZ-ez-Xt2" secondAttribute="bottom" constant="25" id="p4C-rD-zjh"/>
@@ -1155,10 +1155,10 @@
                                 <exclude reference="wO6-I3-DrX"/>
                                 <exclude reference="HSz-ux-GTU"/>
                                 <exclude reference="O2b-rv-B3P"/>
-                                <exclude reference="7uo-7z-5mE"/>
                                 <exclude reference="9qa-5m-4uw"/>
                                 <exclude reference="cSZ-kI-G4R"/>
                                 <exclude reference="rop-b1-XiZ"/>
+                                <exclude reference="7uo-7z-5mE"/>
                                 <exclude reference="KPy-Jl-iau"/>
                                 <exclude reference="My3-nb-U2r"/>
                                 <exclude reference="QiG-Yv-1vS"/>
